@@ -1,0 +1,12 @@
+const MENU_DATA = [\
+  // PIZZAS\
+  { id: \\"p1\\", category: \\"pizzas\\", name: \\"Pepperoni Pizza\\", price: 795, desc: \\"Pork pepperoni, premium rich mozzarella cheese, and our signature slow-simmered marinara pizza sauce on hand-stretched sourdough.\\", tag: \\"Chef Special\\" },\
+  { id: \\"p2\\", category: \\"pizzas\\", name: \\"Classic Margherita\\", price: 525, desc: \\"Fresh hand-pulled mozzarella, house pizza sauce, aromatic fresh basil leaves, and a drizzle of extra virgin olive oil.\\", tag: \\"Vegetarian\\" },\
+  { id: \\"p3\\", category: \\"pizzas\\", name: \\"Chicken & Jalape\u00f1os BBQ\\", price: 695, desc: \\"Sourdough crust topped with smoky BBQ chicken, hot jalape\u00f1os, mozzarella cheese, and red onions.\\", tag: \\"Spicy\\" },\
+  { id: \\"p4\\", category: \\"pizzas\\", name: \\"Salami Milano, Olives & Mushrooms\\", price: 795, desc: \\"Premium pork salami milano, house pizza sauce, fresh mozzarella, black olives, and button mushrooms.\\", tag: \\"Signature\\" },\
+  { id: \\"p5\\", category: \\"pizzas\\", name: \\"Chicken Pesto Cherry Tomatoes\\", price: 695, desc: \\"Grilled chicken strips, homemade green basil pesto base, juicy cherry tomatoes, and mozzarella cheese.\\", tag: \\"Fresh\\" },\
+  { id: \\"p6\\", category: \\"pizzas\\", name: \\"Shaved Asparagus, Olives & Truffle Oil\\", price: 895, desc: \\"Gourmet white pie topped with fresh arugula, cherry tomatoes, shaved asparagus, black olives, mozzarella, and white truffle oil.\\", tag: \\"Premium\\" },\
+  { id: \\"p7\\", category: \\"pizzas\\", name: \\"Curry Hill Pizza\\", price: 575, desc: \\"Indian spiced tikka sauce base, mozzarella cheese, roasted onions, bell peppers, and succulent chicken tikka.\\", tag: \\"Local Twist\\" },\
+  { id: \\"p8\\", category: \\"pizzas\\", name: \\"Brooklyn Special\\", price: 695, d
+<truncated 25147 bytes>", "Description": ""Create app.js containing client interaction scripts: cursor trailing, cart operations, tab filtering, scroll observers, UPI transitions, and ticket printing."", "IsArtifact": "false", "Overwrite": "true", "TargetFile": ""C:\\\\Users\\\\Leharin\\\\.gemini\\\\antigravity\\\\scratch\\\
+olita-web\\\\app.js"", "toolAction": ""Creating app.js"", "toolSummary": ""Create app.js""}}]

@@ -1,0 +1,35 @@
+# Python Cache & Bytecode
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Local Temporary Test Scripts & Logs
+*.log
+null_errors_report.txt
+index_html_history_details.txt
+fallbacks_output*.txt
+extracted_js_logic.txt
+extracted_original_sections.txt
+html_writes_summary.txt
+original_sections_extracted.txt
+compare_*.py
+extract_*.py
+find_*.py
+inspect_*.py
+list_*.py
+print_*.py
+search_*.py
+check_dom_load.py
+check_menu_data.py
+check_null_errors.py
+compare_index_versions.py
+compare_menu_data.py
+compare_sections.py
+decode_step_args.py
+unquote_files.py
+
+# Windows System Files
+Thumbs.db
+ehthumbs.db
+Desktop.ini

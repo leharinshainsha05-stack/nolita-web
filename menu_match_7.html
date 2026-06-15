@@ -1,0 +1,81 @@
+<section class="menu-section" id="menu">
+<div class="section-container">
+<div class="menu-header">
+<div class="menu-header-text">
+<span class="section-tag text-blue">Chef's Menu</span>
+<h2 class="section-title text-white">The Sourdough, The Grill, & More.</h2>
+<p class="section-desc text-muted">
+Select items below to add them to your pre-order cart. Pre-ordered items are cooked fresh upon your arrival, reducing wait times to zero!
+</p>
+</div>
+<!-- Menu Categories tabs -->
+<div class="menu-tabs-container" id="menu-tabs">
+<button class="menu-tab active" data-category="pizzas">🍕 Pizzas</button>
+<button class="menu-tab" data-category="pastas-mains">🍝 Pasta & Mains</button>
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.
+
+
+
+=========================================
+STEP: 239 | SOURCE: MODEL | TYPE: PLANNER_RESPONSE | STATUS: DONE
+=========================================
+CONTENT:
+I have successfully identified the issue and removed the **"MADE FROM REAL INGREDIENTS" typographic banner (with the surprised tomato eye-tracking character)** as requested. 
+
+The previous model response incorrectly mistook your screenshot annotation's highlight pointer for a custom cursor ring (which had already been deleted) and missed that you were pointing to the eye-tracking tomato banner.
+
+### 🛠️ What was removed:
+1. **[index.html](file:///C:/Users/Leharin/.gemini/antigravity/scratch/nolita-web/index.html):** Completely deleted the `<section class="ingredients-banner">` element containing the surprised tomato graphic and text.
+2. **[app.js](file:///C:/Users/Leharin/.gemini/antigravity/scratch/nolita-web/app.js):** Removed the trigonometric eye-tracking script (`initTomatoEyeTracking()`) and its DOM initialization event hook.
+3. **[style.css](file:///C:/Users/Leharin/.gemini/antigravity/scratch/nolita-web/style.css):** Removed all CSS styling rules associated with the ingredients banner, no-wrap text word boxes, tomato wrapping container, and pupil transitions.
+4. **[walkthrough.md](file:///C:/Users/Leharin/.gemini/antigravity/brain/1c34f6ae-c210-4e04-a2e0-64a6eabc2df9/walkthrough.md):** Updated the documentation to record the removal of the banner and eye-tracking code.
+
+### 🔍 Verification & Health Checks:
+- I queried the local development server at **`http://localhost:8080`** using PowerShell. The server resolved successfully with a `200 OK` status, and the website's HTML/CSS/JS assets served perfectly.
+- You can now refresh **`http://localhost:8080`** in your browser to view the updated, clean single-page layout without the surprised tomato banner!
+
+
+=========================================
+STEP: 241 | SOURCE: MODEL | TYPE: PLANNER_RESPONSE | STATUS: DONE
+=========================================
+CONTENT:
+I will view the existing `implementation_plan.md` to review the design context and guidelines, ensuring we build on the current plan.
+
+
+=========================================
+STEP: 242 | SOURCE: MODEL | TYPE: VIEW_FILE | STATUS: DONE
+=========================================
+CONTENT:
+Created At: 2026-06-13T17:53:19Z
+Completed At: 2026-06-13T17:53:19Z
+File Path: `file:///C:/Users/Leharin/.gemini/antigravity/brain/1c34f6ae-c210-4e04-a2e0-64a6eabc2df9/implementation_plan.md`
+Total Lines: 75
+Total Bytes: 5376
+Showing lines 1 to 75
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+# Nolita Storefront Frontend & Paid Booking Funnel
+
+Create a premium, high-performance, single-page web application for Nolita, Chennai. The design is inspired by the bold, photographic, and micro-interactive aesthetic of Bucks Sauce (designed by Buzzworthy Studio). It features the restaurant's actual menu, interactive booking, and local SEO optimization.
+
+## User Review Required
+
+> [!IMPORTANT]
+> The table reservation flow features a **20% Advance Paid Reservation (deposit of ₹300, based on the ₹1,500 average cost for two)** which is credited to the final bill. We will implement this as a mock UPI Payment Overlay (GPay, PhonePe, Paytm) that simulates a fast transaction and QR code scan. 
+
+> [!NOTE]
+> We will use Vanilla HTML, CSS, and JS (with GSAP from CDN for smooth scroll-triggered animations) to deliver a lightning-fast, high-performance single page without the overhead of heavy JS frameworks.
+
+## Proposed Changes
+
+We will create a new web project under the directory:
+📁 `C:/Users/Leharin/.gemini/antigravity/scratch/nolita-web`
+
+---
+
+### Frontend Core
+
+#### [NEW] [index.h
+
+==================================================
+
+

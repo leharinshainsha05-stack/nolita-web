@@ -1,0 +1,1186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nolita | Sourdough Pizza & Craft Eats in Nungambakkam, Chennai</title>
+  <meta name="description" content="Experience authentic NYC sourdough pizza, craft burgers, pastas, and indulgent desserts at Nolita, Nungambakkam, Chennai. Book your table online and get 10% off.">
+  <meta name="keywords" content="Nolita Chennai, Nolita Nungambakkam, pizza in Chennai, sourdough pizza Chennai, cafe near me, Khader Nawaz Khan road restaurants">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="Nolita | Sourdough Pizza & Craft Eats in Chennai">
+  <meta property="og:description" content="Experience authentic NYC sourdough pizza, craft burgers, and pastas in a stunning modern industrial setting on Khader Nawaz Khan Road.">
+  <meta property="og:type" content="restaurant">
+  <meta property="og:url" content="https://nolita.in">
+  <meta property="og:image" content="assets/hero.png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css?v=33">
+  
+  <!-- GSAP for Smooth Animations -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+  <!-- Schema.org Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "name": "Nolita",
+    "image": "assets/hero.png",
+    "@id": "https://nolita.in",
+    "url": "https://nolita.in",
+    "telephone": "+914442119800",
+    "priceRange": "$$",
+    "servesCuisine": ["Pizza", "Fast Food", "Pasta", "Burger", "Desserts", "Beverages"],
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "32/1, 16A-B, Khader Nawaz Khan Road, Nungambakkam",
+      "addressLocality": "Chennai",
+      "addressRegion": "TN",
+      "postalCode": "600006",
+      "addressCountry": "IN"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 13.0611,
+      "longitude": 80.2513
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday"
+      ],
+      "opens": "14:00",
+      "closes": "23:59"
+    },
+    "menu": "https://nolita.in#menu",
+    "acceptsReservations": "True"
+  }
+  </script>
+</head>
+<body>
+  <!-- Custom Trailing Cursor Dot & Ring -->
+  <div class="custom-cursor-dot"></div>
+  <div class="custom-cursor-ring"></div>
+
+  <!-- Brand Loader Screen -->
+  <div id="page-loader" class="page-loader">
+    <div class="loader-content">
+      <h1 class="loader-logo">nolita</h1>
+      <div class="loader-bar-wrap">
+        <div class="loader-bar"></div>
+      </div>
+      <div class="loader-percent">0%</div>
+    </div>
+  </div>
+
+
+
+  <!-- Floating Parallax Ingredients -->
+  <!-- Floating Tomato -->
+  <div class="parallax-ingredient float-tomato" data-speed="-0.08">
+    <svg viewBox="0 0 100 100" width="80" height="80">
+      <circle cx="50" cy="50" r="40" fill="#d63a27" opacity="0.8"/>
+      <path d="M50 15 L50 25 M50 22 L44 18 M50 22 L56 18" stroke="#2fa85a" stroke-width="4" stroke-linecap="round"/>
+    </svg>
+  </div>
+  <!-- Floating Basil Leaf -->
+  <div class="parallax-ingredient float-basil" data-speed="0.12">
+    <svg viewBox="0 0 100 100" width="70" height="70">
+      <path d="M10 50 Q40 10 90 20 Q80 70 10 50 Z" fill="#2fa85a" opacity="0.85"/>
+      <path d="M10 50 Q45 40 90 20" stroke="#1d6637" stroke-width="2" fill="none"/>
+    </svg>
+  </div>
+  <!-- Floating Mushroom -->
+  <div class="parallax-ingredient float-mushroom" data-speed="-0.15">
+    <svg viewBox="0 0 100 100" width="65" height="65">
+      <path d="M20 50 Q20 15 50 15 Q80 15 80 50 Z" fill="#e5dfd9" opacity="0.9"/>
+      <rect x="42" y="50" width="16" height="30" rx="8" fill="#d0c7bd" opacity="0.9"/>
+      <path d="M20 50 L80 50" stroke="#c0b5a7" stroke-width="3"/>
+    </svg>
+  </div>
+  <!-- Floating Garlic -->
+  <div class="parallax-ingredient float-garlic" data-speed="0.05">
+    <svg viewBox="0 0 100 100" width="60" height="60">
+      <path d="M50 10 Q25 45 35 75 Q50 90 65 75 Q75 45 50 10 Z" fill="#fcfaf2" opacity="0.9"/>
+      <path d="M50 10 L50 85" stroke="#e8e4d3" stroke-width="1.5"/>
+    </svg>
+  </div>
+
+  <!-- Header / Navigation -->
+  <header class="main-header">
+    <div class="header-container">
+      <a href="#" class="logo" id="header-logo">nolita</a>
+      <nav class="nav-links" id="main-nav">
+        <a href="#vibe" class="nav-link">The Vibe</a>
+        <a href="#menu" class="nav-link">Menu</a>
+        <a href="#booking" class="nav-link">Reservations</a>
+        <a href="#location" class="nav-link">Find Us</a>
+      </nav>
+      <div class="header-actions">
+        <a href="#menu" class="btn btn-primary" id="nav-delivery-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 6px; vertical-align: middle;"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+          Home Delivery
+        </a>
+        <a href="#booking" class="btn btn-secondary" id="nav-book-btn">Book Table</a>
+        <div class="cart-trigger" id="cart-trigger-btn" aria-label="Open Pre-order Cart">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+          <span class="cart-count" id="cart-badge">0</span>
+        </div>
+        <div class="mobile-menu-toggle" id="mobile-menu-btn" aria-label="Toggle Navigation Menu">
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section (3D Overlapping Product Showcase Slider) -->
+  <section class="hero-slider-section" id="hero">
+    <div class="hero-slider-overlay"></div>
+    <div class="hero-slider-bg"></div>
+
+    <!-- Giant Typographic Background (Z-INDEX 1) -->
+    <div class="hero-text-bg-container">
+      <h1 class="hero-text-bg" id="hero-text-bg">PIZZA</h1>
+    </div>
+
+    <!-- Overlapping Products Gallery Layer (Z-INDEX 2) -->
+    <div class="hero-product-gallery">
+      <!-- Left side secondary product -->
+      <div class="side-product-wrapper left-side" id="side-product-left-wrap">
+        <img src="assets/hero_dessert.png" alt="Strawberry Milkshake" class="side-product-img" id="side-product-left" onload="removeHeroSliceBackground(this)">
+      </div>
+
+      <!-- Main center active product -->
+      <div class="center-product-wrapper" id="center-product-wrap">
+        <img src="assets/pizza_slice_pepperoni.png" alt="Wood-fired Sourdough Pizza" class="center-product-img" id="center-product-main" onload="removeHeroSliceBackground(this)">
+        <div class="floating-spices-container" id="floating-spices">
+          <span class="spice spice-1">🍕</span>
+          <span class="spice spice-2">🌿</span>
+          <span class="spice spice-3">🍅</span>
+        </div>
+      </div>
+
+      <!-- Right side secondary product -->
+      <div class="side-product-wrapper right-side" id="side-product-right-wrap">
+        <img src="assets/hero_burger.png" alt="Towering Craft Burger" class="side-product-img" id="side-product-right" onload="removeHeroSliceBackground(this)">
+      </div>
+    </div>
+
+    <!-- Curved Bottom Dashboard Card (Z-INDEX 3) -->
+    <div class="hero-dashboard-card">
+      <div class="dashboard-content">
+        <!-- Description column -->
+        <div class="dashboard-desc-col">
+          <div class="slide-badge" id="slide-badge">NYC Sourdough Crust</div>
+          <p class="slide-desc" id="slide-description">
+            Sourdough crust fermented for 48 hours, stretched by hand, and baked at 450°C in our brick oven for that perfect leopard-spotted char.
+          </p>
+        </div>
+
+        <!-- Slider controls and navigation -->
+        <div class="dashboard-controls-col">
+          <div class="slider-nav-btns">
+            <button class="nav-arrow-btn prev-btn" id="slider-prev-btn" aria-label="Previous Slide">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+              <span>Prev</span>
+            </button>
+            <a href="#booking" class="btn btn-secondary slider-cta-btn" id="slider-cta-btn">Book Table</a>
+            <button class="nav-arrow-btn next-btn" id="slider-next-btn" aria-label="Next Slide">
+              <span>Next</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Stats column -->
+        <div class="dashboard-stats-col" id="slide-stats">
+          <div class="stat-box">
+            <span class="stat-num" id="stat-1-num">48H</span>
+            <span class="stat-label" id="stat-1-label">Fermented</span>
+          </div>
+          <div class="stat-box">
+            <span class="stat-num" id="stat-2-num">450°C</span>
+            <span class="stat-label" id="stat-2-label">Brick Oven</span>
+          </div>
+          <div class="stat-box">
+            <span class="stat-num" id="stat-3-num">100%</span>
+            <span class="stat-label" id="stat-3-label">Sourdough</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Scrolling Marquee Ribbon -->
+  <div class="marquee-ribbon">
+    <div class="marquee-track">
+      <div class="marquee-content">
+        🍕 AUTHENTIC NYC SOURDOUGH PIZZA &nbsp;•&nbsp; 🍷 LUNCH & DINNER &nbsp;•&nbsp; 🍔 CRAFT BURGERS &nbsp;•&nbsp; 🚚 HOME DELIVERY &nbsp;•&nbsp; 🚗 FREE PARKING &nbsp;•&nbsp; 🌱 VEGETARIAN FRIENDLY &nbsp;•&nbsp; 🍕 AUTHENTIC NYC SOURDOUGH PIZZA &nbsp;•&nbsp; 🍷 LUNCH & DINNER &nbsp;•&nbsp; 🍔 CRAFT BURGERS &nbsp;•&nbsp; 🚚 HOME DELIVERY &nbsp;•&nbsp; 🚗 FREE PARKING &nbsp;•&nbsp; 🌱 VEGETARIAN FRIENDLY &nbsp;•&nbsp;
+      </div>
+    </div>
+  </div>
+
+  <!-- High-Conversion Scroll-Triggered Banner -->
+  <div class="sticky-promo-banner" id="sticky-promo">
+    <div class="promo-content">
+      <span class="promo-badge">🔥 Peak Hours Alert</span>
+      <span class="promo-text"><strong>87% of tables booked</strong> for tonight! Pre-book now to secure your table and get <strong>Flat 10% OFF</strong>.</span>
+    </div>
+    <div class="promo-actions">
+      <a href="#booking" class="btn btn-small" id="promo-action-btn">Book Now</a>
+      <button class="promo-close" id="promo-close-btn" aria-label="Close promotion banner">&times;</button>
+    </div>
+  </div>
+
+  <!-- The Vibe Section -->
+  <section class="vibe-section" id="vibe">
+    <div class="section-container">
+      <div class="vibe-grid">
+        <div class="vibe-text-column" id="vibe-text-content">
+          <span class="section-tag text-blue">The Space</span>
+          <h2 class="section-title">New York Soul,<br>Chennai Vibe.</h2>
+          <p class="section-desc">
+            Step into a slice of Lower Manhattan in the heart of Nungambakkam. Nolita’s space is a striking harmony of raw, industrial styling and vibrant, expressive design.
+          </p>
+          <div class="vibe-details">
+            <div class="vibe-detail-item">
+              <div class="vibe-detail-icon text-blue">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"></path><path d="M2 17l10 5 10-5"></path><path d="M2 12l10 5 10-5"></path></svg>
+              </div>
+              <div class="vibe-detail-info">
+                <h3>Vibrant Sky-Blue Ceiling</h3>
+                <p>A bold, matte sky-blue ceiling grid with matching exposed piping creates an airy, energetic vibe.</p>
+              </div>
+            </div>
+            <div class="vibe-detail-item">
+              <div class="vibe-detail-icon text-blue">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="9" y1="3" x2="9" y2="21"></line><line x1="15" y1="3" x2="15" y2="21"></line><line x1="3" y1="9" x2="21" y2="9"></line><line x1="3" y1="15" x2="21" y2="15"></line></svg>
+              </div>
+              <div class="vibe-detail-info">
+                <h3>Shattered Terrazzo Mosaic</h3>
+                <p>Our custom black-and-white irregular mosaic tile flooring gives the space an artistic, hand-crafted edge.</p>
+              </div>
+            </div>
+            <div class="vibe-detail-item">
+              <div class="vibe-detail-icon text-blue">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+              </div>
+              <div class="vibe-detail-info">
+                <h3>Industrial Warmth</h3>
+                <p>Warm ambient bulbs in low-hanging black pendant lights glow over dark walnut wooden tables.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="vibe-image-column" id="vibe-img-wrap">
+          <div class="vibe-image-frame">
+            <img src="assets/interior.png" alt="Nolita Industrial Interior Vibe" class="vibe-img" id="vibe-interior-img">
+            <div class="vibe-image-overlay-card">
+              <span class="card-large">4.3</span>
+              <span class="card-label">Dining Rating on Zomato</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Nolita's Story Timeline Section -->
+  <section class="story-timeline-section" id="story-timeline">
+    <div class="section-container">
+      <div class="timeline-header">
+        <span class="section-tag text-blue">Our Journey</span>
+        <h2 class="section-title text-white">NYC Roots. Chennai Soul.</h2>
+        <p class="section-desc text-muted">
+          Follow the timeline of how we brought the spirit of Lower Manhattan to Nungambakkam's premier culinary street.
+        </p>
+      </div>
+
+      <div class="timeline-container">
+        <!-- The Timeline line -->
+        <div class="timeline-line">
+          <div class="timeline-line-fill"></div>
+        </div>
+
+        <!-- Timeline Step 1 -->
+        <div class="timeline-item left-item">
+          <div class="timeline-marker">2018</div>
+          <div class="timeline-card">
+            <span class="card-year">2018</span>
+            <h3>The NYC Spark</h3>
+            <p>Inspired by the espresso bars and rustic sourdough pizzerias of NoLiTa (North of Little Italy), Manhattan. We set out to bring the authentic 48-hour slow-fermentation craft to India.</p>
+            <div class="timeline-badge">Origin</div>
+          </div>
+        </div>
+
+        <!-- Timeline Step 2 -->
+        <div class="timeline-item right-item">
+          <div class="timeline-marker">2020</div>
+          <div class="timeline-card">
+            <span class="card-year">2020</span>
+            <h3>Baking the Sourdough</h3>
+            <p>Years of recipe testing perfected our 48-hour fermentation cycle. Stretched entirely by hand, baked at 450°C inside a wood-fired brick oven for the signature leopard-spotted crust char.</p>
+            <div class="timeline-badge">Craft</div>
+          </div>
+        </div>
+
+        <!-- Timeline Step 3 -->
+        <div class="timeline-item left-item">
+          <div class="timeline-marker">2023</div>
+          <div class="timeline-card">
+            <span class="card-year">2023</span>
+            <h3>Chennai Launch</h3>
+            <p>Nolita opens doors in Nungambakkam on Khader Nawaz Khan Road, Chennai. We introduced our signature sky-blue ceiling pipes, matte grids, and shattered terrazzo mosaic floors.</p>
+            <div class="timeline-badge">Milestone</div>
+          </div>
+        </div>
+
+        <!-- Timeline Step 4 -->
+        <div class="timeline-item right-item">
+          <div class="timeline-marker">2026</div>
+          <div class="timeline-card">
+            <span class="card-year">2026</span>
+            <h3>Today & Beyond</h3>
+            <p>We are Chennai's top-rated destination for sourdough pizza, craft burgers, and loaded milkshakes. A perfect gathering spot for coffee dates, work sessions, and family dinners.</p>
+            <div class="timeline-badge">Today</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Highlights & Features Section -->
+  <section class="highlights-section" id="highlights">
+    <div class="section-container">
+      <span class="section-tag text-blue">Quick Highlights</span>
+      <h2 class="section-title text-white">More About Nolita</h2>
+      <p class="section-desc text-muted">
+        Everything you need to know about dining, services, seating, facilities, and options at our Nungambakkam café.
+      </p>
+      
+      <div class="highlights-grid">
+        <!-- 1 -->
+        <div class="highlight-card">
+          <div class="highlight-icon">☀️</div>
+          <div class="highlight-info">
+            <h3>Lunch</h3>
+            <p>Available Daily</p>
+          </div>
+        </div>
+        <!-- 2 -->
+        <div class="highlight-card">
+          <div class="highlight-icon">🌃</div>
+          <div class="highlight-info">
+            <h3>Dinner</h3>
+            <p>Late Night Dining</p>
+          </div>
+        </div>
+        <!-- 3 -->
+        <div class="highlight-card">
+          <div class="highlight-icon">🚚</div>
+          <div class="highlight-info">
+            <h3>Home Delivery</h3>
+            <p>Fast Doorstep Delivery</p>
+          </div>
+        </div>
+        <!-- 4 -->
+        <div class="highlight-card">
+          <div class="highlight-icon">🛍</div>
+          <div class="highlight-info">
+            <h3>Takeaway Available</h3>
+            <p>Quick Self Pick-Up</p>
+          </div>
+        </div>
+        <!-- 5 -->
+        <div class="highlight-card">
+          <div class="highlight-icon">👥</div>
+          <div class="highlight-info">
+            <h3>Stags Allowed</h3>
+            <p>Everyone Welcome</p>
+          </div>
+        </div>
+        <!-- 6 -->
+        <div class="highlight-card">
+          <div class="highlight-icon">🅿️</div>
+          <div class="highlight-info">
+            <h3>Parking Available</h3>
+            <p>Valet & Self Parking</p>
+          </div>
+        </div>
+        <!-- 7 -->
+        <div class="highlight-card">
+          <div class="highlight-icon">🚗</div>
+          <div class="highlight-info">
+            <h3>Free Parking</h3>
+            <p>Complimentary for Diners</p>
+          </div>
+        </div>
+        <!-- 8 -->
+        <div class="highlight-card">
+          <div class="highlight-icon">🤫</div>
+          <div class="highlight-info">
+            <h3>Less Noisy</h3>
+            <p>Quiet, Relaxed Ambience</p>
+          </div>
+        </div>
+        <!-- 9 -->
+        <div class="highlight-card">
+          <div class="highlight-icon">🛋</div>
+          <div class="highlight-info">
+            <h3>Indoor Seating</h3>
+            <p>Air-Conditioned Comfort</p>
+          </div>
+        </div>
+        <!-- 10 -->
+        <div class="highlight-card">
+          <div class="highlight-icon">🌿</div>
+          <div class="highlight-info">
+            <h3>Outdoor Seating</h3>
+            <p>Al-Fresco Dining Space</p>
+          </div>
+        </div>
+        <!-- 11 -->
+        <div class="highlight-card">
+          <div class="highlight-icon">🪑</div>
+          <div class="highlight-info">
+            <h3>Booth Seating</h3>
+            <p>Cozy Private Booths</p>
+          </div>
+        </div>
+        <!-- 12 -->
+        <div class="highlight-card">
+          <div class="highlight-icon">👥</div>
+          <div class="highlight-info">
+            <h3>Large Group Seating</h3>
+            <p>Spacious Table Settings</p>
+          </div>
+        </div>
+        <!-- 13 -->
+        <div class="highlight-card">
+          <div class="highlight-icon">💻</div>
+          <div class="highlight-info">
+            <h3>Work Friendly</h3>
+            <p>Free Wi-Fi & Power Outlets</p>
+          </div>
+        </div>
+        <!-- 14 -->
+        <div class="highlight-card">
+          <div class="highlight-icon">👶</div>
+          <div class="highlight-info">
+            <h3>Kid Friendly</h3>
+            <p>Safe & Welcoming Environment</p>
+          </div>
+        </div>
+        <!-- 15 -->
+        <div class="highlight-card">
+          <div class="highlight-icon">👨‍👩‍👧‍👦</div>
+          <div class="highlight-info">
+            <h3>Family Friendly</h3>
+            <p>Perfect for Family Gatherings</p>
+          </div>
+        </div>
+        <!-- 16 -->
+        <div class="highlight-card">
+          <div class="highlight-icon">🍼</div>
+          <div class="highlight-info">
+            <h3>Baby High Chair</h3>
+            <p>Available Upon Request</p>
+          </div>
+        </div>
+        <!-- 17 -->
+        <div class="highlight-card">
+          <div class="highlight-icon">🌱</div>
+          <div class="highlight-info">
+            <h3>Vegetarian Friendly</h3>
+            <p>Diverse Plant-Based Menu</p>
+          </div>
+        </div>
+        <!-- 18 -->
+        <div class="highlight-card highlight-featured">
+          <div class="highlight-icon">📅</div>
+          <div class="highlight-info">
+            <h3>Table Reservation</h3>
+            <p>Highly Recommended</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Interactive Menu Section -->
+  <section class="menu-section" id="menu">
+    <div class="section-container">
+      <div class="menu-header">
+        <div class="menu-header-text">
+          <span class="section-tag text-blue">Chef's Menu</span>
+          <h2 class="section-title text-white">The Sourdough, The Grill, & More.</h2>
+          <p class="section-desc text-muted">
+            Select items below to add them to your pre-order cart. Pre-ordered items are cooked fresh upon your arrival, reducing wait times to zero!
+          </p>
+        </div>
+        <!-- Menu Categories tabs -->
+        <div class="menu-tabs-container" id="menu-tabs">
+          <button class="menu-tab active" data-category="pizzas">🍕 Pizzas</button>
+          <button class="menu-tab" data-category="pastas-mains">🍝 Pasta & Mains</button>
+          <button class="menu-tab" data-category="burgers">🥪 Burgers & Breads</button>
+          <button class="menu-tab" data-category="appetisers">🍢 Appetisers</button>
+          <button class="menu-tab" data-category="desserts">🍰 Desserts</button>
+          <button class="menu-tab" data-category="beverages">🥤 Beverages</button>
+        </div>
+      </div>
+
+      <!-- Menu Grid -->
+      <div class="menu-grid" id="menu-items-grid">
+        <!-- Rendered Dynamically by app.js, with fallback static SEO-friendly items -->
+        <!-- Pizza Fallbacks -->
+        <div class="menu-card pizzas" data-item-id="p1">
+          <div class="menu-card-image-wrapper">
+            <img src="assets/pizza.png" alt="Pepperoni Pizza" class="menu-card-image">
+          </div>
+          <div class="menu-card-content">
+            <div class="menu-card-header">
+              <h3 class="item-title">Pepperoni Pizza</h3>
+              <span class="item-price">₹795</span>
+            </div>
+            <p class="item-description">Pork pepperoni, premium rich mozzarella cheese, and our signature slow-simmered marinara pizza sauce on hand-stretched sourdough.</p>
+            <div class="menu-card-footer">
+              <span class="item-tag">Chef Special</span>
+              <button class="btn-add-preorder" data-id="p1" data-name="Pepperoni Pizza" data-price="795">Add to Pre-Order</button>
+            </div>
+          </div>
+        </div>
+        
+        <div class="menu-card pizzas" data-item-id="p2">
+          <div class="menu-card-image-wrapper">
+            <img src="assets/pizza.png" alt="Classic Margherita" class="menu-card-image">
+          </div>
+          <div class="menu-card-content">
+            <div class="menu-card-header">
+              <h3 class="item-title">Classic Margherita</h3>
+              <span class="item-price">₹525</span>
+            </div>
+            <p class="item-description">Fresh hand-pulled mozzarella, house pizza sauce, aromatic fresh basil leaves, and a drizzle of extra virgin olive oil.</p>
+            <div class="menu-card-footer">
+              <span class="item-tag">Vegetarian</span>
+              <button class="btn-add-preorder" data-id="p2" data-name="Classic Margherita" data-price="525">Add to Pre-Order</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-card pizzas" data-item-id="p3">
+          <div class="menu-card-image-wrapper">
+            <img src="assets/pizza.png" alt="Chicken & Jalapeños BBQ" class="menu-card-image">
+          </div>
+          <div class="menu-card-content">
+            <div class="menu-card-header">
+              <h3 class="item-title">Chicken & Jalapeños BBQ</h3>
+              <span class="item-price">₹695</span>
+            </div>
+            <p class="item-description">Sourdough crust topped with smoky BBQ chicken, hot jalapeños, mozzarella cheese, and red onions.</p>
+            <div class="menu-card-footer">
+              <span class="item-tag">Spicy</span>
+              <button class="btn-add-preorder" data-id="p3" data-name="Chicken & Jalapeños BBQ" data-price="695">Add to Pre-Order</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-card pizzas" data-item-id="p4">
+          <div class="menu-card-image-wrapper">
+            <img src="assets/pizza.png" alt="Salami Milano, Olives & Mushrooms" class="menu-card-image">
+          </div>
+          <div class="menu-card-content">
+            <div class="menu-card-header">
+              <h3 class="item-title">Salami Milano, Olives & Mushrooms</h3>
+              <span class="item-price">₹795</span>
+            </div>
+            <p class="item-description">Premium pork salami milano, house pizza sauce, fresh mozzarella, black olives, and button mushrooms.</p>
+            <div class="menu-card-footer">
+              <span class="item-tag">Signature</span>
+              <button class="btn-add-preorder" data-id="p4" data-name="Salami Milano, Olives & Mushrooms" data-price="795">Add to Pre-Order</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pasta Fallbacks -->
+        <div class="menu-card pastas-mains" style="display:none;" data-item-id="pa1">
+          <div class="menu-card-image-wrapper">
+            <img src="assets/pasta.png" alt="Fettuccine Beef Bolognese" class="menu-card-image">
+          </div>
+          <div class="menu-card-content">
+            <div class="menu-card-header">
+              <h3 class="item-title">Fettuccine Beef Bolognese</h3>
+              <span class="item-price">₹595</span>
+            </div>
+            <p class="item-description">Slow-simmered minced tenderloin ragù in red wine tomato sauce, served over fresh fettuccine, topped with shaved parmesan.</p>
+            <div class="menu-card-footer">
+              <span class="item-tag">Classic</span>
+              <button class="btn-add-preorder" data-id="pa1" data-name="Fettuccine Beef Bolognese" data-price="595">Add to Pre-Order</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-card pastas-mains" style="display:none;" data-item-id="pa2">
+          <div class="menu-card-image-wrapper">
+            <img src="assets/pasta.png" alt="Brick Oven Roast Chicken Roulade" class="menu-card-image">
+          </div>
+          <div class="menu-card-content">
+            <div class="menu-card-header">
+              <h3 class="item-title">Brick Oven Roast Chicken Roulade</h3>
+              <span class="item-price">₹650</span>
+            </div>
+            <p class="item-description">Tender chicken breast stuffed with fresh spinach and cheese, roasted in our brick oven and served with white wine sauce.</p>
+            <div class="menu-card-footer">
+              <span class="item-tag">Chef Special</span>
+              <button class="btn-add-preorder" data-id="pa2" data-name="Brick Oven Roast Chicken Roulade" data-price="650">Add to Pre-Order</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Burgers Fallbacks -->
+        <div class="menu-card burgers" style="display:none;" data-item-id="b1">
+          <div class="menu-card-image-wrapper">
+            <img src="assets/burger.png" alt="Heirloom Tomato, Burrata & Pesto" class="menu-card-image">
+          </div>
+          <div class="menu-card-content">
+            <div class="menu-card-header">
+              <h3 class="item-title">Heirloom Tomato, Burrata & Pesto</h3>
+              <span class="item-price">₹675</span>
+            </div>
+            <p class="item-description">Fresh heirloom tomatoes, homemade basil pesto, rich creamy burrata cheese, and wild arugula inside a foot-long rustic bread.</p>
+            <div class="menu-card-footer">
+              <span class="item-tag">Vegetarian</span>
+              <button class="btn-add-preorder" data-id="b1" data-name="Heirloom Tomato, Burrata & Pesto" data-price="675">Add to Pre-Order</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-card burgers" style="display:none;" data-item-id="b2">
+          <div class="menu-card-image-wrapper">
+            <img src="assets/burger.png" alt="Philly Cheese Steak Footlong" class="menu-card-image">
+          </div>
+          <div class="menu-card-content">
+            <div class="menu-card-header">
+              <h3 class="item-title">Philly Cheese Steak Footlong</h3>
+              <span class="item-price">₹495</span>
+            </div>
+            <p class="item-description">Sautéed tenderloin strips, caramelized onions, green bell peppers, crunchy lettuce, rich cheese sauce, and melted cheese.</p>
+            <div class="menu-card-footer">
+              <span class="item-tag">Best Seller</span>
+              <button class="btn-add-preorder" data-id="b2" data-name="Philly Cheese Steak Footlong" data-price="495">Add to Pre-Order</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="menu-footer-note">
+        <p>All prices are exclusive of applicable taxes. average cost of ₹1,500 for two people.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reservation Section with Pre-Order Drawer and UPI Modal -->
+  <section class="booking-section" id="booking">
+    <!-- Split Layout: Booking Details / Cart & Pre-Order -->
+    <div class="section-container">
+      <div class="booking-grid">
+        
+        <!-- Reservation Details Form -->
+        <div class="booking-form-wrap" id="booking-form-box">
+          <span class="section-tag text-blue">Reservation</span>
+          <h2 class="section-title">Pre-Book Your Table</h2>
+          <p class="section-desc">
+            Secure your spot during peak hours. A **20% advance booking fee (₹300)** applies, which will be fully deducted from your final bill.
+          </p>
+
+          <form id="reservation-form" class="reservation-form">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="booking-name">Full Name</label>
+                <input type="text" id="booking-name" required placeholder="Enter your name">
+              </div>
+              <div class="form-group">
+                <label for="booking-phone">Phone Number</label>
+                <input type="tel" id="booking-phone" required placeholder="e.g. +91 98765 43210" pattern="[0-9+ ]{10,15}">
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="booking-date">Date</label>
+                <input type="date" id="booking-date" required>
+              </div>
+              <div class="form-group">
+                <label for="booking-time">Time Slot</label>
+                <select id="booking-time" required>
+                  <option value="" disabled selected>Select a slot</option>
+                  <option value="14:00">02:00 PM (Lunch)</option>
+                  <option value="15:30">03:30 PM (Late Lunch)</option>
+                  <option value="19:00">07:00 PM (Dinner)</option>
+                  <option value="20:30">08:30 PM (Prime Dinner)</option>
+                  <option value="22:00">10:00 PM (Late Night)</option>
+                  <option value="23:00">11:00 PM (Midnight Cravings)</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="booking-guests">Number of Guests</label>
+                <select id="booking-guests" required>
+                  <option value="2" selected>2 Guests (Avg. cost ₹1,500)</option>
+                  <option value="1">1 Guest</option>
+                  <option value="3">3 Guests</option>
+                  <option value="4">4 Guests</option>
+                  <option value="6">6 Guests</option>
+                  <option value="8">8+ Guests (Call restaurant)</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="booking-special">Special Notes</label>
+                <input type="text" id="booking-special" placeholder="e.g. Birthday celebration, window seat">
+              </div>
+            </div>
+
+            <!-- Booking Offers Selection -->
+            <div class="booking-offers-selection">
+              <div class="offer-card active-offer" id="booking-offer-card">
+                <div class="offer-radio">
+                  <input type="radio" name="booking-offer" id="offer-prebook" checked>
+                  <label for="offer-prebook">
+                    <strong>Pre-Book Discount (10% OFF)</strong>
+                    <span>Applied automatically to your final dining bill today!</span>
+                  </label>
+                </div>
+                <div class="offer-badge-pill">Active</div>
+              </div>
+            </div>
+
+            <div class="deposit-breakdown">
+              <div class="breakdown-row">
+                <span>Standard Table Booking Deposit</span>
+                <span class="text-bold">₹300</span>
+              </div>
+              <div class="breakdown-row" id="preorder-deposit-row" style="display: none;">
+                <span>Pre-Order Deposit (20% of Food)</span>
+                <span class="text-bold text-blue" id="preorder-deposit-val">₹0</span>
+              </div>
+              <hr class="divider">
+              <div class="breakdown-row total-row">
+                <span>Total Advance to Pay (UPI)</span>
+                <span class="text-blue text-large" id="total-advance-val">₹300</span>
+              </div>
+              <p class="deposit-notice">
+                * This deposit is fully credited to your dining bill. In case of cancellation 2 hours prior, 100% refund is processed.
+              </p>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block" id="booking-submit-btn">
+              Proceed to Secure Reservation (₹300)
+            </button>
+          </form>
+        </div>
+
+        <!-- Pre-Order Cart / Sidebar -->
+        <div class="booking-cart-wrap" id="preorder-cart-box">
+          <div class="cart-header">
+            <h3>Your Pre-Order Cart</h3>
+            <span class="cart-items-counter" id="cart-item-count-label">0 items</span>
+          </div>
+
+          <div class="cart-body">
+            <!-- Empty Cart Screen -->
+            <div class="empty-cart-state" id="empty-cart-msg">
+              <div class="empty-cart-icon">🍕</div>
+              <h4>Your pre-order is empty</h4>
+              <p>Browse the menu above and add items to pre-order for your table. We’ll have them freshly prepared as soon as you sit down.</p>
+              <a href="#menu" class="btn btn-secondary btn-small">View Menu</a>
+            </div>
+
+            <!-- Cart Items List -->
+            <div class="cart-items-list" id="cart-items-container" style="display: none;">
+              <!-- Items injected here by app.js -->
+            </div>
+          </div>
+
+          <div class="cart-footer" id="cart-footer-div" style="display: none;">
+            <div class="cart-summary-row">
+              <span>Food & Beverage Subtotal</span>
+              <span id="cart-subtotal">₹0</span>
+            </div>
+            <div class="cart-summary-row promo-applied">
+              <span>Pre-Book Offer (10% OFF)</span>
+              <span id="cart-discount">-₹0</span>
+            </div>
+            <div class="cart-summary-row total">
+              <span>Estimated Bill at Cafe</span>
+              <span id="cart-total">₹0</span>
+            </div>
+            <div class="cart-tip">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+              <span>Paying ₹300 advance now locks in your table and secures these pre-ordered items.</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Reservation Ticket / Receipt (Hidden initially) -->
+  <section class="ticket-section" id="ticket-showcase" style="display: none;">
+    <div class="section-container">
+      <div class="ticket-wrapper">
+        <div class="ticket-card" id="ticket-receipt-card">
+          <!-- Ticket Header -->
+          <div class="ticket-header-block">
+            <span class="ticket-brand">Nolita Chennai</span>
+            <div class="ticket-status-badge">Confirmed & Paid</div>
+          </div>
+          <!-- Ticket Body -->
+          <div class="ticket-body-block">
+            <div class="ticket-row-large">
+              <div class="ticket-col">
+                <span class="t-label">Booking Name</span>
+                <span class="t-val" id="t-booking-name">Leharin Kumar</span>
+              </div>
+              <div class="ticket-col text-right">
+                <span class="t-label">Reservation ID</span>
+                <span class="t-val text-blue" id="t-booking-id">NOL-2026-8947</span>
+              </div>
+            </div>
+
+            <div class="ticket-divider"></div>
+
+            <div class="ticket-row">
+              <div class="ticket-col">
+                <span class="t-label">Date</span>
+                <span class="t-val" id="t-booking-date">June 14, 2026</span>
+              </div>
+              <div class="ticket-col">
+                <span class="t-label">Time</span>
+                <span class="t-val" id="t-booking-time">08:30 PM</span>
+              </div>
+              <div class="ticket-col text-right">
+                <span class="t-label">Guests</span>
+                <span class="t-val" id="t-booking-guests">2 Guests</span>
+              </div>
+            </div>
+
+            <div class="ticket-divider"></div>
+
+            <div class="ticket-row" id="t-preorders-row" style="display: none;">
+              <div class="ticket-col full-width">
+                <span class="t-label">Pre-Ordered Food Items</span>
+                <span class="t-val text-small" id="t-preorders-list">1x Pepperoni Pizza, 1x Classic Margherita</span>
+              </div>
+            </div>
+
+            <div class="ticket-divider"></div>
+
+            <div class="ticket-row payments-summary">
+              <div class="ticket-col">
+                <span class="t-label">Advance Paid (UPI)</span>
+                <span class="t-val text-green" id="t-paid-amount">₹300.00</span>
+              </div>
+              <div class="ticket-col text-right">
+                <span class="t-label">Deducted from Bill</span>
+                <span class="t-val text-green" id="t-credit-amount">-₹300.00</span>
+              </div>
+            </div>
+            
+            <div class="ticket-footer-msg">
+              <p>Please show this digital ticket upon arrival at the restaurant. Flat 10% OFF will be applied to your final printed check.</p>
+              <div class="qr-code-placeholder" id="ticket-qr-code">
+                <!-- Synthesized QR graphic via SVG -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="qr-svg"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><path d="M7 17h.01M17 17h.01M17 7h.01"></path></svg>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="ticket-actions">
+          <button class="btn btn-secondary" id="btn-print-ticket">Print / Save Ticket</button>
+          <button class="btn btn-outline-white" id="btn-book-another">Make Another Booking</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Location & Context Section -->
+  <section class="location-section" id="location">
+    <div class="section-container">
+      <div class="location-grid">
+        
+        <!-- Left: Map Graphics -->
+        <div class="map-card" id="map-visual-card">
+          <!-- Stylized Local SEO Map showing Khader Nawaz Khan Road -->
+          <div class="map-container">
+            <div class="map-mockup">
+              <!-- Grid Background represent blocks -->
+              <div class="map-grid-bg"></div>
+              <div class="map-road road-knk">
+                <span>Khader Nawaz Khan Road</span>
+              </div>
+              <div class="map-road road-sub"></div>
+              <!-- Landmark markers -->
+              <div class="map-marker landmark ferrara">Ferrara</div>
+              <div class="map-marker landmark toscano">Toscano</div>
+              <div class="map-marker landmark sandys">Sandy's</div>
+              <div class="map-marker landmark tuscana">Tuscana</div>
+              <!-- Nolita main highlighted marker -->
+              <div class="map-marker nolita-star active-pulse">
+                <div class="star-pulse"></div>
+                <div class="marker-bubble">nolita</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Address & Contact Details -->
+        <div class="contact-details" id="contact-info-block">
+          <span class="section-tag text-blue">Location</span>
+          <h2 class="section-title text-white">Find Us in Nungambakkam</h2>
+          <p class="section-desc text-muted">
+            Located on Chennai's premier premium culinary street, Khader Nawaz Khan Road. Free parking is available for all diners.
+          </p>
+
+          <div class="contact-list">
+            <div class="contact-item">
+              <div class="contact-icon text-blue">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              </div>
+              <div class="contact-text">
+                <h3>Address</h3>
+                <p>32/1, 16A-B, Khader Nawaz Khan Road, Nungambakkam, Chennai, Tamil Nadu 600006</p>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon text-blue">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+              </div>
+              <div class="contact-text">
+                <h3>Hours</h3>
+                <p>Open daily from 2:00 PM to 12:00 Midnight</p>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon text-blue">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+              </div>
+              <div class="contact-text">
+                <h3>Phone</h3>
+                <p><a href="tel:+914442119800" class="phone-link">+91 44 4211 9800</a></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="seo-location-rich">
+            <h4>Popular tags:</h4>
+            <div class="tag-row">
+              <span class="seo-tag-pill">Pizza Near Me</span>
+              <span class="seo-tag-pill">Best Sourdough Pizza Chennai</span>
+              <span class="seo-tag-pill">KNK Road Cafes</span>
+              <span class="seo-tag-pill">Dining in Nungambakkam</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="main-footer">
+    <div class="section-container">
+      <div class="footer-bottom">
+        <p>&copy; 2026 Nolita Cafe. All rights reserved. Created with a beautiful modern-industrial aesthetic inspired by Bucks Sauce.</p>
+        <div class="footer-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Booking</a>
+          <a href="#menu">Digital Menu</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- UPI Payment Overlay Modal (Hidden initially) -->
+  <div class="upi-modal-overlay" id="upi-modal">
+    <div class="upi-modal-container">
+      
+      <!-- Header -->
+      <div class="upi-modal-header">
+        <div class="upi-logo-container">
+          <span class="upi-logo-text">UPI</span>
+          <span class="upi-logo-desc">Unified Payments Interface</span>
+        </div>
+        <button class="upi-modal-close" id="upi-close-btn">&times;</button>
+      </div>
+
+      <!-- Main Payment screen -->
+      <div class="upi-modal-body" id="upi-pay-screen">
+        <div class="payment-merchant-info">
+          <div class="merchant-avatar">N</div>
+          <div class="merchant-details">
+            <h4 class="merchant-name">Nolita Chennai</h4>
+            <p class="merchant-upi-id">nolita@ybl</p>
+          </div>
+          <div class="payment-amount">
+            <span class="currency">₹</span>
+            <span class="amount-val" id="upi-amount-label">300.00</span>
+          </div>
+        </div>
+
+        <div class="upi-payment-modes">
+          <p class="section-subtitle-small">Select a UPI Application to pay</p>
+          <div class="upi-apps-grid">
+            <button class="upi-app-btn" data-app="gpay">
+              <div class="app-icon gpay-icon">G</div>
+              <span>Google Pay</span>
+            </button>
+            <button class="upi-app-btn" data-app="phonepe">
+              <div class="app-icon phonepe-icon">P</div>
+              <span>PhonePe</span>
+            </button>
+            <button class="upi-app-btn" data-app="paytm">
+              <div class="app-icon paytm-icon">Py</div>
+              <span>Paytm</span>
+            </button>
+            <button class="upi-app-btn" data-app="bhim">
+              <div class="app-icon bhim-icon">B</div>
+              <span>BHIM UPI</span>
+            </button>
+          </div>
+
+          <div class="upi-qr-section">
+            <p class="or-divider"><span>OR Scan QR Code</span></p>
+            <div class="upi-qr-box">
+              <div class="qr-scanner-visual">
+                <!-- Synthesized QR using SVG for fast loading -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="140" height="140" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="qr-svg-large"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><path d="M7 17h.01M17 17h.01M17 7h.01M7 7h.01M12 7v10M7 12h10"></path></svg>
+              </div>
+              <p class="qr-caption">Scan with any UPI App to pay deposit</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Simulation controls -->
+        <div class="upi-sim-controls">
+          <button class="btn btn-success btn-small" id="upi-btn-success">Simulate Payment Success</button>
+          <button class="btn btn-danger btn-small" id="upi-btn-fail">Simulate Payment Failure</button>
+        </div>
+      </div>
+
+      <!-- Processing state -->
+      <div class="upi-modal-body" id="upi-processing-screen" style="display: none;">
+        <div class="payment-spinner-container">
+          <div class="payment-spinner"></div>
+          <h4 class="processing-title">Sending Request to your UPI App...</h4>
+          <p class="processing-desc">Please complete the payment in your selected app. Do not refresh or press back.</p>
+        </div>
+      </div>
+
+      <!-- Success Screen -->
+      <div class="upi-modal-body" id="upi-success-screen" style="display: none;">
+        <div class="payment-result-container success">
+          <div class="result-icon-circle">
+            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          </div>
+          <h4 class="result-title text-green">Payment Successful</h4>
+          <p class="result-desc">Transaction Ref: <strong>TXN-NOL-892407519</strong></p>
+          <p class="result-sub">Your table at Nolita Chennai is successfully reserved! Redirection in progress...</p>
+        </div>
+      </div>
+
+      <!-- Failure Screen -->
+      <div class="upi-modal-body" id="upi-failure-screen" style="display: none;">
+        <div class="payment-result-container failure">
+          <div class="result-icon-circle">
+            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+          </div>
+          <h4 class="result-title text-red">Payment Declined</h4>
+          <p class="result-desc">The transaction was cancelled or declined by your bank.</p>
+          <button class="btn btn-secondary btn-small" id="upi-btn-retry">Try Again</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Deep Message Popup Modal (Premium Detail Card Layout) -->
+  <div class="deep-popup-modal" id="deep-popup-modal">
+    <div class="deep-popup-overlay" id="deep-popup-overlay"></div>
+    <div class="deep-popup-card">
+      <div class="deep-popup-close" id="deep-popup-close-btn">&times;</div>
+      
+      <!-- Top Image Section -->
+      <div class="deep-popup-top">
+        <img src="" alt="" class="deep-popup-img" id="deep-popup-image">
+      </div>
+      
+      <!-- Checkered Separator Ribbon -->
+      <div class="deep-popup-separator"></div>
+      
+      <!-- Bottom Content Section -->
+      <div class="deep-popup-bottom">
+        <div class="deep-popup-meta">
+          <span class="diet-indicator" id="deep-popup-diet">
+            <span class="diet-dot" id="deep-popup-diet-dot"></span>
+          </span>
+          <span class="deep-popup-badge" id="deep-popup-badge">New Launch</span>
+        </div>
+        
+        <h3 class="deep-popup-title" id="deep-popup-title">Item Name</h3>
+        <div class="deep-popup-subinfo" id="deep-popup-subinfo">SHORT(237 ml) · 224 kcal</div>
+        
+        <div class="deep-popup-allergens" id="deep-popup-allergens">
+          <!-- Populated dynamically -->
+        </div>
+        
+        <p class="deep-popup-message" id="deep-popup-message">Description of the item...</p>
+        
+        <div class="deep-popup-price-row" id="deep-popup-price-row">
+          <span class="deep-popup-price" id="deep-popup-price">₹ 414.75</span>
+          <button class="btn-add-preorder" id="deep-popup-preorder-btn">Add to Pre-Order</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Navigation Drawer -->
+  <div class="mobile-nav-drawer" id="mobile-nav-drawer">
+    <div class="mobile-nav-close" id="mobile-nav-close-btn">&times;</div>
+    <nav class="mobile-nav-links">
+      <a href="#vibe" class="mobile-nav-link">The Vibe</a>
+      <a href="#menu" class="mobile-nav-link">Menu</a>
+      <a href="#booking" class="mobile-nav-link">Reservations</a>
+      <a href="#location" class="mobile-nav-link">Find Us</a>
+    </nav>
+  </div>
+
+  <!-- Nolita Mascot Assistant (Noli) -->
+  <div class="nolita-mascot-container hidden" id="nolita-mascot-container">
+    <div class="mascot-avatar" id="mascot-avatar"></div>
+  </div>
+
+  <!-- Javascript -->
+  <script src="app.js?v=34"></script>
+</body>
+</html>
