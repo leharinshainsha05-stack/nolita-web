@@ -53,9 +53,9 @@ cafe_config = {
                 'badge': 'NYC Sourdough Crust',
                 'desc': 'Sourdough crust fermented for 48 hours, stretched by hand, and baked at 450°C in our brick oven for that perfect leopard-spotted char.',
                 'bgColor': '#8c2d19',
-                'mainImg': 'assets/pizza_slice_pepperoni_1781375201745.png',
-                'leftImg': 'assets/hero_dessert_1781373797548.png',
-                'rightImg': 'assets/hero_burger_1781373782388.png',
+                'mainImg': 'assets/pizza_slice_pepperoni.png',
+                'leftImg': 'assets/hero_dessert.png',
+                'rightImg': 'assets/hero_burger.png',
                 'spices': ['🍕', '🌿', '🍅'],
                 'stats': [
                     { 'num': '48H', 'label': 'Fermented' },
@@ -69,14 +69,30 @@ cafe_config = {
                 'badge': 'Craft Gourmet Grills',
                 'desc': 'Juicy, flame-grilled premium patties, double cheddar cheese, and fresh farm ingredients layered in a toasted artisanal brioche bun.',
                 'bgColor': '#996f2d',
-                'mainImg': 'assets/hero_burger_1781373782388.png',
-                'leftImg': 'assets/pizza_slice_pepperoni_1781375201745.png',
-                'rightImg': 'assets/hero_dessert_1781373797548.png',
+                'mainImg': 'assets/hero_burger.png',
+                'leftImg': 'assets/pizza_slice_pepperoni.png',
+                'rightImg': 'assets/hero_dessert.png',
                 'spices': ['🧀', '🧅', '🍔'],
                 'stats': [
                     { 'num': '100%', 'label': 'Fresh Grills' },
                     { 'num': 'Fresh', 'label': 'Brioche Bun' },
                     { 'num': 'Double', 'label': 'Cheddar' }
+                ]
+            },
+            {
+                'id': 2,
+                'heading': 'SWEETS',
+                'badge': 'Loaded Shakes & Treats',
+                'desc': 'Indulge in our premium loaded strawberry milkshakes, warm chocolate chip skillet cookie sundae, and authentic Italian tiramisu.',
+                'bgColor': '#c58c82',
+                'mainImg': 'assets/hero_dessert.png',
+                'leftImg': 'assets/hero_burger.png',
+                'rightImg': 'assets/pizza_slice_pepperoni.png',
+                'spices': ['🍓', '🍫', '🍪'],
+                'stats': [
+                    { 'num': 'Fresh', 'label': 'Baked Daily' },
+                    { 'num': 'Premium', 'label': 'Cream Blend' },
+                    { 'num': '100%', 'label': 'Real Nutella' }
                 ]
             }
         ]
@@ -88,7 +104,7 @@ cafe_config = {
         'primary_color': '#8c7853',        # Vintage Brass Gold
         'accent_color': '#5c4e36',         # Deep roasted coffee brown
         'light_color': '#f5f2eb',          # Vintage cream
-        'hero_image_url': 'assets/hero_coffee_1781376773422.png',
+        'hero_image_url': 'assets/beverage.png',
         'mascot_sprite_source': 'assets/mascot_transparent.png',
         'location_tags': ['Alwarpet', 'Chennai', 'Chamiers Road', 'Artisanal Coffee', 'All-Day English Breakfast'],
         'story_title': 'The Chamiers Vibe',
@@ -106,9 +122,9 @@ cafe_config = {
                 'badge': 'Artisanal Roasts',
                 'desc': 'Slow-extracted specialty grade coffee beans sourced directly from Chikmagalur, ground fresh on our Mazzer grinders.',
                 'bgColor': '#5c4e36',
-                'mainImg': 'assets/hero_coffee_1781376773422.png',
-                'leftImg': 'assets/hero_burger_1781373782388.png',
-                'rightImg': 'assets/hero_dessert_1781373797548.png',
+                'mainImg': 'assets/beverage.png',
+                'leftImg': 'assets/hero_burger.png',
+                'rightImg': 'assets/hero_dessert.png',
                 'spices': ['☕', '🍪', '🥛'],
                 'stats': [
                     { 'num': '100%', 'label': 'Arabica' },
@@ -122,9 +138,9 @@ cafe_config = {
                 'badge': 'European Dining',
                 'desc': 'Comforting recipes from southern Europe, using imported parmesan, extra virgin olive oil, and organic farm greens.',
                 'bgColor': '#8c7853',
-                'mainImg': 'assets/hero_burger_1781373782388.png',
-                'leftImg': 'assets/hero_coffee_1781376773422.png',
-                'rightImg': 'assets/hero_dessert_1781373797548.png',
+                'mainImg': 'assets/hero_burger.png',
+                'leftImg': 'assets/beverage.png',
+                'rightImg': 'assets/hero_dessert.png',
                 'spices': ['🥬', '🧀', '🍽️'],
                 'stats': [
                     { 'num': 'Fresh', 'label': 'Daily Prep' },
@@ -141,7 +157,7 @@ cafe_config = {
         'primary_color': '#2e7d32',        # Forest green
         'accent_color': '#1b5e20',         # Deep leaf green
         'light_color': '#e8f5e9',          # Mint backdrop
-        'hero_image_url': 'assets/hero_burger_1781373782388.png',
+        'hero_image_url': 'assets/hero_burger.png',
         'mascot_sprite_source': 'assets/mascot_transparent.png',
         'location_tags': ['Nungambakkam', 'Chennai', 'Pet Friendly Cafe', 'Dog Park Dining', 'Comfort Food'],
         'story_title': 'A Pet Sanctuary',
@@ -158,9 +174,9 @@ cafe_config = {
                 'badge': 'Pet-Friendly Haven',
                 'desc': 'Let your pets play in our secure grass gardens while you enjoy thick milkshakes, loaded macaroni, and wood-fired pizzas.',
                 'bgColor': '#1b5e20',
-                'mainImg': 'assets/hero_burger_1781373782388.png',
-                'leftImg': 'assets/hero_dessert_1781373797548.png',
-                'rightImg': 'assets/pizza_slice_pepperoni_1781375201745.png',
+                'mainImg': 'assets/hero_burger.png',
+                'leftImg': 'assets/hero_dessert.png',
+                'rightImg': 'assets/pizza_slice_pepperoni.png',
                 'spices': ['🐶', '🍔', '🌳'],
                 'stats': [
                     { 'num': '100%', 'label': 'Pet Safe' },
