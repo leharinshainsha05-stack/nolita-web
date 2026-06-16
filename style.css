@@ -1687,16 +1687,23 @@ body {
 }
 
 /* Location & Maps UI */
+/* Location & Maps UI */
 .location-section {
-  padding: 8rem 2rem;
+  padding: 5rem 2rem;
   background-color: var(--clr-charcoal-medium);
   border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+@media (max-width: 768px) {
+  .location-section {
+    padding: 3.5rem 1.2rem;
+  }
 }
 
 .location-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 4rem;
+  gap: 2.5rem;
   align-items: center;
 }
 
@@ -1717,8 +1724,14 @@ body {
 
 .map-container {
   width: 100%;
-  height: 400px;
+  height: 320px;
   position: relative;
+}
+
+@media (max-width: 768px) {
+  .map-container {
+    height: 240px;
+  }
 }
 
 .map-mockup {
@@ -1739,7 +1752,7 @@ body {
   background-image: 
     linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
-  background-size: 22px 22px; /* Zoomed out from 40px */
+  background-size: 14px 14px; /* Zoomed out grid size */
 }
 
 .map-road {
@@ -1750,7 +1763,7 @@ body {
   justify-content: center;
   color: rgba(255, 255, 255, 0.12);
   font-family: var(--font-headings);
-  font-size: 0.58rem; /* Zoomed out from 0.7rem */
+  font-size: 0.48rem; /* Zoomed out from 0.58rem */
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.5px;
@@ -1758,7 +1771,7 @@ body {
 
 .road-knk {
   width: 100%;
-  height: 32px; /* Zoomed out from 50px */
+  height: 20px; /* Zoomed out from 32px */
   top: 50%;
   transform: translateY(-50%);
 }
@@ -1766,7 +1779,7 @@ body {
 .road-sub-1 {
   position: absolute;
   background-color: #272d34;
-  width: 20px; /* Zoomed out from 40px */
+  width: 12px; /* Zoomed out from 20px */
   height: 100%;
   left: 25%;
 }
@@ -1774,7 +1787,7 @@ body {
 .road-sub-2 {
   position: absolute;
   background-color: #272d34;
-  width: 20px;
+  width: 12px;
   height: 100%;
   left: 75%;
 }
@@ -1783,16 +1796,16 @@ body {
   position: absolute;
   background-color: #272d34;
   width: 100%;
-  height: 20px;
+  height: 12px;
   top: 22%;
 }
 
 .map-marker {
   position: absolute;
-  padding: 0.25rem 0.6rem; /* Zoomed out from 0.3rem 0.8rem */
+  padding: 0.15rem 0.4rem; /* Zoomed out padding */
   border-radius: 50px;
   font-family: var(--font-body);
-  font-size: 0.62rem; /* Zoomed out from 0.7rem */
+  font-size: 0.52rem; /* Zoomed out font size */
   font-weight: 600;
 }
 
@@ -1808,13 +1821,13 @@ body {
 .tuscana { top: 70%; left: 82%; }
 
 .nolita-star {
-  top: 38%; /* Adjusted for the narrower road */
+  top: 44%; /* Realigned to sit perfectly on KNK road center */
   left: 50%;
   transform: translate(-50%, -50%);
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.4rem;
+  gap: 0.3rem;
   z-index: 10;
 }
 
@@ -1822,17 +1835,17 @@ body {
   font-family: var(--font-headings);
   background-color: var(--clr-blue);
   color: var(--clr-charcoal);
-  font-size: 0.8rem; /* Zoomed out from 0.95rem */
+  font-size: 0.65rem; /* Zoomed out bubble text */
   font-weight: 800;
   text-transform: lowercase;
-  padding: 0.3rem 0.9rem; /* Zoomed out from 0.4rem 1.2rem */
+  padding: 0.2rem 0.6rem; /* Zoomed out bubble padding */
   border-radius: 50px;
   box-shadow: 0 5px 15px rgba(82, 166, 222, 0.4);
 }
 
 .star-pulse {
-  width: 15px;
-  height: 15px;
+  width: 10px; /* Zoomed out from 15px */
+  height: 10px;
   border-radius: 50%;
   background-color: var(--clr-blue);
   position: relative;
