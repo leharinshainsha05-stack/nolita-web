@@ -3303,5 +3303,85 @@ body.has-custom-cursor .nolita-mascot-container {
     width: 60px;
     height: 60px;
   }
+
+  /* Main Header Button Hiding (shown inside drawer instead) */
+  #nav-delivery-btn,
+  #nav-book-btn {
+    display: none !important;
+  }
+
+  /* Hero Dashboard & Controls adjustments */
+  .hero-dashboard-card {
+    padding: 1.5rem 1.2rem 1.2rem 1.2rem !important;
+  }
+  .dashboard-content {
+    gap: 1rem !important;
+  }
+  .slider-nav-btns {
+    width: 100%;
+    justify-content: space-between;
+    padding: 0.25rem !important;
+  }
+  .nav-arrow-btn {
+    width: 38px;
+    height: 38px;
+    padding: 0 !important;
+    border-radius: 50% !important;
+    justify-content: center;
+    align-items: center;
+  }
+  .nav-arrow-btn span {
+    display: none !important;
+  }
+  .nav-arrow-btn svg {
+    margin: 0 !important;
+  }
+  .slider-cta-btn {
+    padding: 0.55rem 1.2rem !important;
+    font-size: 0.75rem !important;
+  }
+  .dashboard-stats-col {
+    gap: 1rem !important;
+    padding-top: 1rem !important;
+  }
+
+  /* Menu tabs horizontal scrolling */
+  .menu-tabs-container {
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    justify-content: flex-start !important;
+    width: 100% !important;
+    border-radius: 50px !important;
+    padding: 0.4rem 0.8rem !important;
+    -webkit-overflow-scrolling: touch !important;
+    scrollbar-width: none !important;
+  }
+  .menu-tabs-container::-webkit-scrollbar {
+    display: none !important;
+  }
+  .menu-tab {
+    flex-shrink: 0 !important;
+    padding: 0.5rem 1.1rem !important;
+    font-size: 0.8rem !important;
+  }
+
+  /* Booking form container padding shrink */
+  .booking-form-wrap {
+    padding: 1.5rem !important;
+  }
 }
+
+@media (max-width: 580px) {
+  /* Highlights Grid - single column to prevent squeezing */
+  .highlights-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+  }
+  
+  .highlight-card {
+    padding: 1.2rem !important;
+    gap: 1rem !important;
+  }
+}
+
 

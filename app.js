@@ -3,6 +3,235 @@
    Controls: Menu rendering, Interactive cart, Scroll triggers, UPI Overlay
    ========================================================================== */
 
+// Master client-side configuration for multi-tenant static fallback
+const CLIENT_CAFE_CONFIG = {
+  nolita: {
+    name: 'Nolita',
+    name_lower: 'nolita',
+    tagline: 'Sourdough Pizza & Craft Eats in Nungambakkam, Chennai',
+    primary_color: '#52a6de',
+    accent_color: '#3a8cbf',
+    light_color: '#e5f4fd',
+    hero_image_url: 'assets/hero.png',
+    mascot_sprite_source: 'assets/mascot_transparent.png',
+    location_tags: ['Nungambakkam', 'Chennai', 'Khader Nawaz Khan Road', 'Sourdough Pizza', 'NYC Industrial Cafe'],
+    story_title: 'Our Sourdough Story',
+    story_text: 'Inspired by the espresso bars and rustic sourdough pizzerias of NoLiTa (North of Little Italy), Manhattan, we bring wood-fired authenticity and craft comfort eats straight to Chennai.',
+    menu_data: [
+      { id: "p1", category: "pizzas", name: "Pepperoni Pizza", price: 795, desc: "Pork pepperoni, premium rich mozzarella cheese, and our signature slow-simmered marinara pizza sauce on hand-stretched sourdough.", tag: "Chef Special", img: "assets/pizza.png" },
+      { id: "p2", category: "pizzas", name: "Classic Margherita", price: 525, desc: "Fresh hand-pulled mozzarella, house pizza sauce, aromatic fresh basil leaves, and a drizzle of extra virgin olive oil.", tag: "Vegetarian", img: "assets/pizza.png" },
+      { id: "pa1", category: "pastas-mains", name: "Fettuccine Beef Bolognese", price: 595, desc: "Slow-simmered minced tenderloin ragù in red wine tomato sauce, served over fresh fettuccine, topped with shaved parmesan.", tag: "Classic", img: "assets/pasta.png" },
+      { id: "b1", category: "burgers", name: "Heirloom Tomato, Burrata & Pesto", price: 675, desc: "Fresh heirloom tomatoes, homemade basil pesto, rich creamy burrata cheese, and wild arugula inside a foot-long rustic bread.", tag: "Vegetarian", img: "assets/burger.png" },
+      { id: "ap1", category: "appetisers", name: "Giant Mozzarella Sticks", price: 595, desc: "Crispy-fried giant mozzarella cheese sticks sprinkled with peri peri seasoning, served with a side of garlic aioli.", tag: "Popular", img: "assets/appetiser.png" }
+    ],
+    slider_data: [
+      {
+        id: 0,
+        heading: 'PIZZA',
+        badge: 'NYC Sourdough Crust',
+        desc: 'Sourdough crust fermented for 48 hours, stretched by hand, and baked at 450°C in our brick oven for that perfect leopard-spotted char.',
+        bgColor: '#8c2d19',
+        mainImg: 'assets/pizza_slice_pepperoni.png',
+        leftImg: 'assets/hero_dessert.png',
+        rightImg: 'assets/hero_burger.png',
+        spices: ['🍕', '🌿', '🍅'],
+        stats: [
+          { num: '48H', label: 'Fermented' },
+          { num: '450°C', label: 'Brick Oven' },
+          { num: '100%', label: 'Sourdough' }
+        ]
+      },
+      {
+        id: 1,
+        heading: 'BURGER',
+        badge: 'Craft Gourmet Grills',
+        desc: 'Juicy, flame-grilled premium patties, double cheddar cheese, and fresh farm ingredients layered in a toasted artisanal brioche bun.',
+        bgColor: '#996f2d',
+        mainImg: 'assets/hero_burger.png',
+        leftImg: 'assets/pizza_slice_pepperoni.png',
+        rightImg: 'assets/hero_dessert.png',
+        spices: ['🧀', '🧅', '🍔'],
+        stats: [
+          { num: '100%', label: 'Fresh Grills' },
+          { num: 'Fresh', label: 'Brioche Bun' },
+          { num: 'Double', label: 'Cheddar' }
+        ]
+      },
+      {
+        id: 2,
+        heading: 'SWEETS',
+        badge: 'Loaded Shakes & Treats',
+        desc: 'Indulge in our premium loaded strawberry milkshakes, warm chocolate chip skillet cookie sundae, and authentic Italian tiramisu.',
+        bgColor: '#c58c82',
+        mainImg: 'assets/hero_dessert.png',
+        leftImg: 'assets/hero_burger.png',
+        rightImg: 'assets/pizza_slice_pepperoni.png',
+        spices: ['🍓', '🍫', '🍪'],
+        stats: [
+          { num: 'Fresh', label: 'Baked Daily' },
+          { num: 'Premium', label: 'Cream Blend' },
+          { num: '100%', label: 'Real Nutella' }
+        ]
+      }
+    ]
+  },
+  chamiers: {
+    name: 'Chamiers Cafe',
+    name_lower: 'chamiers',
+    tagline: 'Artisanal Coffee & All-Day Dining in Alwarpet, Chennai',
+    primary_color: '#8c7853',
+    accent_color: '#5c4e36',
+    light_color: '#f5f2eb',
+    hero_image_url: 'assets/beverage.png',
+    mascot_sprite_source: 'assets/mascot_transparent.png',
+    location_tags: ['Alwarpet', 'Chennai', 'Chamiers Road', 'Artisanal Coffee', 'All-Day English Breakfast'],
+    story_title: 'The Chamiers Vibe',
+    story_text: 'Chamiers Cafe is an elegant, vintage-inspired sanctuary in Chennai, serving artisanal coffees, fresh salads, and comforting European plates surrounded by classic brass aesthetics.',
+    menu_data: [
+      { id: "c1", category: "pizzas", name: "Classic Flat White", price: 220, desc: "Premium hand-selected espresso roast, extracted double and combined with velvety microfoamed milk.", tag: "House Blend", img: "assets/beverage.png" },
+      { id: "c2", category: "pizzas", name: "Cold Brew Tonic", price: 240, desc: "Signature 18-hour cold steeped coffee, served over sparkling tonic and an orange wheel.", tag: "Refreshing", img: "assets/beverage.png" },
+      { id: "c3", category: "pastas-mains", name: "Wild Mushroom Risotto", price: 485, desc: "Creamy arborio rice cooked with fresh shiitake, button, and porcini mushrooms, finished with white truffle oil.", tag: "Gluten Free", img: "assets/pasta.png" },
+      { id: "c4", category: "burgers", name: "Chamiers Club Sandwich", price: 395, desc: "Double decker toasted bread layered with grilled chicken, eggs, crispy bacon, tomatoes, and herb mustard.", tag: "Signature", img: "assets/burger.png" }
+    ],
+    slider_data: [
+      {
+        id: 0,
+        heading: 'COFFEE',
+        badge: 'Artisanal Roasts',
+        desc: 'Slow-extracted specialty grade coffee beans sourced directly from Chikmagalur, ground fresh on our Mazzer grinders.',
+        bgColor: '#5c4e36',
+        mainImg: 'assets/beverage.png',
+        leftImg: 'assets/hero_burger.png',
+        rightImg: 'assets/hero_dessert.png',
+        spices: ['☕', '🍪', '🥛'],
+        stats: [
+          { num: '100%', label: 'Arabica' },
+          { num: '88+', label: 'Cupping Score' },
+          { num: 'Local', label: 'Sourced' }
+        ]
+      },
+      {
+        id: 1,
+        heading: 'CLASSIC',
+        badge: 'European Dining',
+        desc: 'Comforting recipes from southern Europe, using imported parmesan, extra virgin olive oil, and organic farm greens.',
+        bgColor: '#8c7853',
+        mainImg: 'assets/hero_burger.png',
+        leftImg: 'assets/beverage.png',
+        rightImg: 'assets/hero_dessert.png',
+        spices: ['🥬', '🧀', '🍽️'],
+        stats: [
+          { num: 'Fresh', label: 'Daily Prep' },
+          { num: 'Organic', label: 'Veggies' },
+          { num: 'Import', label: 'Cheese' }
+        ]
+      }
+    ]
+  },
+  thebark: {
+    name: 'The Bark',
+    name_lower: 'thebark',
+    tagline: 'Pet-Friendly Cafe & Comfort Food in Nungambakkam, Chennai',
+    primary_color: '#2e7d32',
+    accent_color: '#1b5e20',
+    light_color: '#e8f5e9',
+    hero_image_url: 'assets/hero_burger.png',
+    mascot_sprite_source: 'assets/mascot_transparent.png',
+    location_tags: ['Nungambakkam', 'Chennai', 'Pet Friendly Cafe', 'Dog Park Dining', 'Comfort Food'],
+    story_title: 'A Pet Sanctuary',
+    story_text: 'The Bark is Chennai\'s premier pet-friendly dining retreat, featuring a vibrant dog garden, pet menus, and mouth-watering comfort food for human companions.',
+    menu_data: [
+      { id: "b1", category: "pizzas", name: "Puppy Treat Burger (Pet Safe)", price: 250, desc: "Salt-free chicken and pumpkin mash patty wrapped in a grain-free sweet potato bun, safe for your dogs.", tag: "Pet Special", img: "assets/burger.png" },
+      { id: "b2", category: "pastas-mains", name: "Loaded Three-Cheese Mac", price: 380, desc: "Creamy cheddar, mozzarella, and processed cheese sauce baked with macaroni, topped with parsley crumbs.", tag: "Comfort Food", img: "assets/pasta.png" },
+      { id: "b3", category: "burgers", name: "Bark Special Clubhouse", price: 420, desc: "Triple-decker sandwich with grilled chicken breast, fried egg, lettuce, sliced tomato, and garlic cheese spread.", tag: "Best Seller", img: "assets/burger.png" }
+    ],
+    slider_data: [
+      {
+        id: 0,
+        heading: 'BARK',
+        badge: 'Pet-Friendly Haven',
+        desc: 'Let your pets play in our secure grass gardens while you enjoy thick milkshakes, loaded macaroni, and wood-fired pizzas.',
+        bgColor: '#1b5e20',
+        mainImg: 'assets/hero_burger.png',
+        leftImg: 'assets/hero_dessert.png',
+        rightImg: 'assets/pizza_slice_pepperoni.png',
+        spices: ['🐶', '🍔', '🌳'],
+        stats: [
+          { num: 'Dog Park', label: 'Outdoor Garden' },
+          { num: 'Fresh', label: 'Dog Treats' },
+          { num: '100%', label: 'Pet Friendly' }
+        ]
+      }
+    ]
+  }
+};
+
+// Client-Side Multi-Tenant Query Parameter Sniffer
+const urlParams = new URLSearchParams(window.location.search);
+let activeCafeKey = urlParams.get('cafe');
+if (activeCafeKey) activeCafeKey = activeCafeKey.toLowerCase();
+if (!activeCafeKey || !CLIENT_CAFE_CONFIG[activeCafeKey]) {
+  activeCafeKey = 'nolita';
+}
+
+// Check if we need client-side variable injection (when server-side injection is skipped)
+if (!window.CAFE_BRAND_CONFIG) {
+  const brandConfig = CLIENT_CAFE_CONFIG[activeCafeKey];
+  window.CAFE_BRAND_CONFIG = {
+    name: brandConfig.name,
+    tagline: brandConfig.tagline
+  };
+  window.CAFE_MENU_DATA = brandConfig.menu_data;
+  window.CAFE_SLIDER_DATA = brandConfig.slider_data;
+
+  // Apply CSS overrides to Head immediately to prevent style flashes
+  const clientStyle = document.createElement('style');
+  clientStyle.id = 'dynamic-brand-variables-client';
+  clientStyle.innerHTML = `
+    :root {
+      --clr-blue: ${brandConfig.primary_color} !important;
+      --clr-blue-dark: ${brandConfig.accent_color} !important;
+      --clr-blue-light: ${brandConfig.light_color} !important;
+    }
+    .mascot-avatar {
+      background-image: url('${brandConfig.mascot_sprite_source}') !important;
+    }
+  `;
+  document.head.appendChild(clientStyle);
+
+  // Perform DOM substitutions on DOMContentLoaded
+  document.addEventListener("DOMContentLoaded", () => {
+    document.title = `${brandConfig.name} | ${brandConfig.tagline}`;
+    
+    document.querySelectorAll(".loader-logo").forEach(el => el.textContent = brandConfig.name_lower);
+    document.querySelectorAll("#header-logo").forEach(el => el.textContent = brandConfig.name_lower);
+    document.querySelectorAll(".ticket-brand").forEach(el => el.textContent = `${brandConfig.name} Chennai`);
+    document.querySelectorAll(".merchant-name").forEach(el => el.textContent = `${brandConfig.name} Chennai`);
+    document.querySelectorAll(".merchant-upi-id").forEach(el => el.textContent = `${brandConfig.name_lower}@ybl`);
+    document.querySelectorAll(".marker-bubble").forEach(el => el.textContent = brandConfig.name_lower);
+    
+    const footerCopyright = document.querySelector("footer p");
+    if (footerCopyright) {
+      footerCopyright.innerHTML = footerCopyright.innerHTML.replace("Nolita Cafe", `${brandConfig.name} Cafe`);
+    }
+
+    // Story section swaps
+    const storyCardTitle = document.getElementById("story-card-title");
+    if (storyCardTitle) storyCardTitle.textContent = brandConfig.story_title;
+    
+    const storyCardText = document.getElementById("story-card-text");
+    if (storyCardText) storyCardText.textContent = brandConfig.story_text;
+
+    // Timeline and specific headings
+    const sectionTitles = document.querySelectorAll(".section-title");
+    sectionTitles.forEach(t => {
+      if (t.textContent.includes("Nolita")) {
+        t.textContent = t.textContent.replace(/Nolita/g, brandConfig.name);
+      }
+    });
+  });
+}
+
 const MENU_DATA = window.CAFE_MENU_DATA || [
   // PIZZAS
   { id: "p1", category: "pizzas", name: "Pepperoni Pizza", price: 795, desc: "Pork pepperoni, premium rich mozzarella cheese, and our signature slow-simmered marinara pizza sauce on hand-stretched sourdough.", tag: "Chef Special", img: "assets/pizza.png" },
@@ -1389,57 +1618,6 @@ function initLoader() {
         
         if (!loaderLogo || !headerLogo || !pageLoader) return;
         
-        const isMobile = window.innerWidth <= 768;
-        
-        if (isMobile) {
-          // Mobile path: Bypass FLIP flight animation. Just show header logo and slide up preloader.
-          gsap.set(headerLogo, { opacity: 1 });
-          
-          const mobileTl = gsap.timeline();
-          mobileTl.to(pageLoader, {
-            yPercent: -100,
-            duration: 0.95,
-            ease: "power4.inOut"
-          });
-          
-          // Animate Hero typography reveal
-          const bgTitle = document.querySelector(".hero-slide-active .hero-text-bg");
-          if (bgTitle) {
-            mobileTl.from(bgTitle, {
-              y: 80,
-              opacity: 0,
-              duration: 0.85,
-              ease: "power3.out"
-            }, "-=0.6");
-          }
-          
-          // Reveal nav links and header actions
-          mobileTl.from(".nav-link, .header-actions", {
-            y: -25,
-            opacity: 0,
-            stagger: 0.05,
-            duration: 0.65,
-            ease: "power2.out"
-          }, "-=0.5");
-          
-          mobileTl.set(pageLoader, { display: "none" });
-          mobileTl.call(() => {
-            initScrollParallax();
-            initGsapScrollReveals();
-            initHeroSlider();
-            initTimelineAnimations();
-            init3DTilt();
-            initMagneticButtons();
-            startPizzaSliceCarousel();
-            initMascotAssistant();
-            if (typeof ScrollTrigger !== "undefined") ScrollTrigger.refresh();
-          });
-          
-          return;
-        }
-        
-        // Desktop path: Unified GPU-accelerated Logo Flight Animation
-        
         // Ensure header logo is hidden during flight
         gsap.set(headerLogo, { opacity: 0 });
         
@@ -1455,7 +1633,7 @@ function initLoader() {
         // Create the flying copy
         const flyingLogo = document.createElement("div");
         flyingLogo.className = "flying-logo";
-        flyingLogo.textContent = "nolita";
+        flyingLogo.textContent = loaderLogo.textContent || "nolita";
         document.body.appendChild(flyingLogo);
         
         // Position it exactly at the final target location, but transform it to match the starting location
@@ -1670,7 +1848,7 @@ function setupMobileMenu() {
   const btn = document.getElementById("mobile-menu-btn");
   const closeBtn = document.getElementById("mobile-nav-close-btn");
   const drawer = document.getElementById("mobile-nav-drawer");
-  const links = document.querySelectorAll(".mobile-nav-link");
+  const links = document.querySelectorAll(".mobile-nav-link, #mobile-drawer-delivery-btn, #mobile-drawer-book-btn");
 
   if (!btn || !drawer) return;
 

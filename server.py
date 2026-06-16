@@ -302,10 +302,8 @@ class MultiTenantCafeServer(SimpleHTTPRequestHandler):
         html = html.replace('<h2 class="section-title text-white">More About Nolita</h2>', f'<h2 class="section-title text-white">More About {config["name"]}</h2>')
         
         # D. Brand Story Injection
-        html = html.replace('<h3 class="story-title text-accent">Our Sourdough Story</h3>', f'<h3 class="story-title text-accent">{config["story_title"]}</h3>')
-        # Target the main static paragraph and swap it out
-        story_target = 'Inspired by the espresso bars and rustic sourdough pizzerias of NoLiTa (North of Little Italy), Manhatten, we bring wood-fired authenticity and craft comfort eats straight to Nungambakkam.'
-        html = html.replace(story_target, config['story_text'])
+        html = html.replace('<h3 id="story-card-title">The NYC Spark</h3>', f'<h3 id="story-card-title">{config["story_title"]}</h3>')
+        html = html.replace('<p id="story-card-text">Inspired by the espresso bars and rustic sourdough pizzerias of NoLiTa (North of Little Italy), Manhattan. We set out to bring the authentic 48-hour slow-fermentation craft to India.</p>', f'<p id="story-card-text">{config["story_text"]}</p>')
         
         return html
 
