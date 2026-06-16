@@ -1694,6 +1694,12 @@ body {
   border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
+.location-section .section-title {
+  font-size: clamp(1.8rem, 3.2vw, 2.5rem);
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
 @media (max-width: 768px) {
   .location-section {
     padding: 3.5rem 1.2rem;
@@ -1784,6 +1790,14 @@ body {
   left: 25%;
 }
 
+.road-sub-middle {
+  position: absolute;
+  background-color: #272d34;
+  width: 12px;
+  height: 100%;
+  left: 50%;
+}
+
 .road-sub-2 {
   position: absolute;
   background-color: #272d34;
@@ -1798,6 +1812,26 @@ body {
   width: 100%;
   height: 12px;
   top: 22%;
+}
+
+.road-bottom {
+  position: absolute;
+  background-color: #272d34;
+  width: 100%;
+  height: 12px;
+  top: 78%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.road-bottom span {
+  font-family: var(--font-headings);
+  font-size: 0.45rem;
+  color: rgba(255, 255, 255, 0.08);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .map-marker {
@@ -1816,31 +1850,16 @@ body {
 }
 
 .ferrara { top: 12%; left: 8%; }
-.toscano { top: 70%; left: 8%; }
+.toscano { top: 62%; left: 8%; }
 .sandys { top: 12%; left: 82%; }
-.tuscana { top: 70%; left: 82%; }
+.tuscana { top: 62%; left: 82%; }
 
 .nolita-star {
-  top: 44%; /* Realigned to sit perfectly on KNK road center */
+  position: absolute;
+  top: 50%; /* Center dot exactly on the intersection of KNK road (50%) and middle vertical road (50%) */
   left: 50%;
   transform: translate(-50%, -50%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.3rem;
   z-index: 10;
-}
-
-.marker-bubble {
-  font-family: var(--font-headings);
-  background-color: var(--clr-blue);
-  color: var(--clr-charcoal);
-  font-size: 0.65rem; /* Zoomed out bubble text */
-  font-weight: 800;
-  text-transform: lowercase;
-  padding: 0.2rem 0.6rem; /* Zoomed out bubble padding */
-  border-radius: 50px;
-  box-shadow: 0 5px 15px rgba(82, 166, 222, 0.4);
 }
 
 .star-pulse {
@@ -1861,6 +1880,23 @@ body {
   top: 0;
   left: 0;
   animation: markerPulse 1.5s infinite;
+}
+
+.marker-bubble {
+  position: absolute;
+  bottom: 15px; /* Float bubble absolutely above the dot */
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--font-headings);
+  background-color: var(--clr-blue);
+  color: var(--clr-charcoal);
+  font-size: 0.65rem; /* Zoomed out bubble text */
+  font-weight: 800;
+  text-transform: lowercase;
+  padding: 0.2rem 0.6rem; /* Zoomed out bubble padding */
+  border-radius: 50px;
+  box-shadow: 0 5px 15px rgba(82, 166, 222, 0.4);
+  white-space: nowrap;
 }
 
 @keyframes markerPulse {
