@@ -2875,18 +2875,7 @@ body.has-custom-cursor .custom-cursor-ring {
   will-change: transform;
 }
 
-/* 5. Mobile overrides */
-@media (max-width: 768px) {
-  .custom-cursor-dot,
-  .custom-cursor-ring {
-    display: none !important;
-  }
-  body.has-custom-cursor,
-  body.has-custom-cursor a,
-  body.has-custom-cursor button {
-    cursor: auto !important;
-  }
-}
+/* 5. Mobile overrides removed for mobile parity */
 
 
 /* ==========================================================================
@@ -3310,15 +3299,7 @@ body.has-custom-cursor .nolita-mascot-container {
 
 /* Responsive constraints for mobile viewports */
 @media (max-width: 768px) {
-  /* On mobile, disable follow mode position overrides and anchor at bottom right */
-  body.has-custom-cursor .nolita-mascot-container {
-    bottom: 20px;
-    right: 20px;
-    top: auto;
-    left: auto;
-    align-items: flex-end;
-    transition: transform 0.3s ease, opacity 0.3s ease;
-  }
+
   .nolita-mascot-container {
     bottom: 20px;
     right: 20px;

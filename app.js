@@ -1728,10 +1728,6 @@ function initLoader() {
 
 // 19. Custom Trailing Cursor with Inertia
 function initCustomCursor() {
-  // Disable custom cursor on mobile/touch screens or small viewports
-  const isTouch = ("ontouchstart" in window) || (navigator.maxTouchPoints > 0);
-  if (isTouch || window.innerWidth <= 768) return;
-  
   const dot = document.querySelector(".custom-cursor-dot");
   const ring = document.querySelector(".custom-cursor-ring");
   
@@ -1740,20 +1736,50 @@ function initCustomCursor() {
   // Add body trigger class
   document.body.classList.add("has-custom-cursor");
   
-  // Set initial position out of bounds
-  gsap.set([dot, ring], { x: window.innerWidth / 2, y: window.innerHeight / 2 });
+  // Set initial position out of bounds and initial opacity
+  gsap.set([dot, ring], { x: window.innerWidth / 2, y: window.innerHeight / 2, opacity: 0 });
   
   const xDotTo = gsap.quickTo(dot, "x", { duration: 0.08, ease: "power3" });
   const yDotTo = gsap.quickTo(dot, "y", { duration: 0.08, ease: "power3" });
   const xRingTo = gsap.quickTo(ring, "x", { duration: 0.3, ease: "power2.out" });
   const yRingTo = gsap.quickTo(ring, "y", { duration: 0.3, ease: "power2.out" });
   
+  const updatePosition = (clientX, clientY) => {
+    xDotTo(clientX);
+    yDotTo(clientY);
+    xRingTo(clientX);
+    yRingTo(clientY);
+  };
+
   window.addEventListener("mousemove", (e) => {
-    xDotTo(e.clientX);
-    yDotTo(e.clientY);
-    xRingTo(e.clientX);
-    yRingTo(e.clientY);
+    gsap.to([dot, ring], { opacity: 1, duration: 0.15, overwrite: "auto" });
+    updatePosition(e.clientX, e.clientY);
   });
+  
+  window.addEventListener("mouseleave", () => {
+    gsap.to([dot, ring], { opacity: 0, duration: 0.2, overwrite: "auto" });
+  });
+
+  // Touch event support for mobile viewports
+  window.addEventListener("touchstart", (e) => {
+    if (e.touches.length > 0) {
+      gsap.to([dot, ring], { opacity: 1, duration: 0.1, overwrite: "auto" });
+      updatePosition(e.touches[0].clientX, e.touches[0].clientY);
+    }
+  }, { passive: true });
+
+  window.addEventListener("touchmove", (e) => {
+    if (e.touches.length > 0) {
+      updatePosition(e.touches[0].clientX, e.touches[0].clientY);
+    }
+  }, { passive: true });
+
+  const hideTouchCursor = () => {
+    gsap.to([dot, ring], { opacity: 0, duration: 0.2, overwrite: "auto" });
+  };
+
+  window.addEventListener("touchend", hideTouchCursor);
+  window.addEventListener("touchcancel", hideTouchCursor);
   
   // Expand on hover
   const hoverSelector = "a, button, .btn, .cart-trigger, .menu-card, .highlight-card, .vibe-image-frame, .promo-close, .logo";
@@ -1777,16 +1803,13 @@ function initCustomCursor() {
 
 // 20. 3D Card Hover Tilt Motion
 function init3DTilt() {
-  const isTouch = ("ontouchstart" in window) || (navigator.maxTouchPoints > 0);
-  if (isTouch || window.innerWidth <= 768) return;
-  
   const items = document.querySelectorAll(".menu-card, .highlight-card, .vibe-image-frame");
   
   items.forEach((item) => {
-    item.addEventListener("mousemove", (e) => {
+    const applyTilt = (clientX, clientY) => {
       const rect = item.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
+      const x = clientX - rect.left;
+      const y = clientY - rect.top;
       
       const centerX = rect.width / 2;
       const centerY = rect.height / 2;
@@ -1802,9 +1825,9 @@ function init3DTilt() {
         ease: "power2.out",
         overwrite: "auto"
       });
-    });
-    
-    item.addEventListener("mouseleave", () => {
+    };
+
+    const resetTilt = () => {
       gsap.to(item, {
         rotateX: 0,
         rotateY: 0,
@@ -1812,22 +1835,42 @@ function init3DTilt() {
         ease: "power2.out",
         overwrite: "auto"
       });
+    };
+
+    // Mouse events
+    item.addEventListener("mousemove", (e) => {
+      applyTilt(e.clientX, e.clientY);
     });
+    
+    item.addEventListener("mouseleave", resetTilt);
+
+    // Touch events for tactile tap/drag feedback
+    item.addEventListener("touchstart", (e) => {
+      if (e.touches.length > 0) {
+        applyTilt(e.touches[0].clientX, e.touches[0].clientY);
+      }
+    }, { passive: true });
+
+    item.addEventListener("touchmove", (e) => {
+      if (e.touches.length > 0) {
+        applyTilt(e.touches[0].clientX, e.touches[0].clientY);
+      }
+    }, { passive: true });
+
+    item.addEventListener("touchend", resetTilt);
+    item.addEventListener("touchcancel", resetTilt);
   });
 }
 
 // 21. Magnetic Button Interaction
 function initMagneticButtons() {
-  const isTouch = ("ontouchstart" in window) || (navigator.maxTouchPoints > 0);
-  if (isTouch || window.innerWidth <= 768) return;
-  
   const buttons = document.querySelectorAll(".btn, .cart-trigger, .nav-link, .promo-close, .main-header .logo");
   
   buttons.forEach((btn) => {
-    btn.addEventListener("mousemove", (e) => {
+    const applyPull = (clientX, clientY) => {
       const rect = btn.getBoundingClientRect();
-      const x = e.clientX - rect.left - rect.width / 2;
-      const y = e.clientY - rect.top - rect.height / 2;
+      const x = clientX - rect.left - rect.width / 2;
+      const y = clientY - rect.top - rect.height / 2;
       
       gsap.to(btn, {
         x: x * 0.3, // Pull strength 30%
@@ -1836,9 +1879,9 @@ function initMagneticButtons() {
         ease: "power2.out",
         overwrite: "auto"
       });
-    });
-    
-    btn.addEventListener("mouseleave", () => {
+    };
+
+    const resetPull = () => {
       gsap.to(btn, {
         x: 0,
         y: 0,
@@ -1846,7 +1889,30 @@ function initMagneticButtons() {
         ease: "elastic.out(1, 0.4)",
         overwrite: "auto"
       });
+    };
+
+    // Mouse events
+    btn.addEventListener("mousemove", (e) => {
+      applyPull(e.clientX, e.clientY);
     });
+    
+    btn.addEventListener("mouseleave", resetPull);
+
+    // Touch events for tactile pull
+    btn.addEventListener("touchstart", (e) => {
+      if (e.touches.length > 0) {
+        applyPull(e.touches[0].clientX, e.touches[0].clientY);
+      }
+    }, { passive: true });
+
+    btn.addEventListener("touchmove", (e) => {
+      if (e.touches.length > 0) {
+        applyPull(e.touches[0].clientX, e.touches[0].clientY);
+      }
+    }, { passive: true });
+
+    btn.addEventListener("touchend", resetPull);
+    btn.addEventListener("touchcancel", resetPull);
   });
 }
 
@@ -2353,44 +2419,91 @@ function initMascotAssistant() {
 
   if (!container || !avatar) return;
 
+  // Function to get home position dynamically (bottom-right corner)
+  const getMascotHomePos = () => {
+    const isMobile = window.innerWidth <= 768;
+    const size = isMobile ? 60 : 75;
+    const padding = 20;
+    return {
+      x: window.innerWidth - size - padding,
+      y: window.innerHeight - size - padding
+    };
+  };
+
+  // Set initial position to home
+  const home = getMascotHomePos();
+  gsap.set(container, { x: home.x, y: home.y });
+
   // Welcome mascot on load (with delay after preloader exits)
   setTimeout(() => {
     container.classList.remove("hidden");
     setMascotExpression("cheerful");
   }, 1200);
 
-  // Setup cursor trailing follow logic for desktop viewports
-  const isTouch = ("ontouchstart" in window) || (navigator.maxTouchPoints > 0);
-  const useFollow = !isTouch && window.innerWidth > 768;
+  const xMascotTo = gsap.quickTo(container, "x", { duration: 0.5, ease: "power2.out" });
+  const yMascotTo = gsap.quickTo(container, "y", { duration: 0.5, ease: "power2.out" });
 
-  if (useFollow) {
-    // Set initial position off-screen
-    gsap.set(container, { x: window.innerWidth / 2, y: window.innerHeight / 2 });
+  let isMascotFrozen = false;
+  let isTracking = false;
 
-    const xMascotTo = gsap.quickTo(container, "x", { duration: 0.5, ease: "power2.out" });
-    const yMascotTo = gsap.quickTo(container, "y", { duration: 0.5, ease: "power2.out" });
+  // Freeze Noli when the cursor hovers directly on the mascot avatar
+  avatar.addEventListener("mouseenter", () => {
+    isMascotFrozen = true;
+  });
 
-    let isMascotFrozen = false;
+  avatar.addEventListener("mouseleave", () => {
+    isMascotFrozen = false;
+  });
 
-    // Freeze Noli when the cursor hovers directly on the mascot avatar.
-    // This allows clicking him, and prevents Noli from running away or getting stuck.
-    avatar.addEventListener("mouseenter", () => {
-      isMascotFrozen = true;
-    });
+  // Mouse interactions
+  window.addEventListener("mousemove", (e) => {
+    if (isMascotFrozen) return;
+    isTracking = true;
+    // Offset mascot diagonally to the bottom-right of the cursor
+    xMascotTo(e.clientX + 45);
+    yMascotTo(e.clientY + 45);
+  });
 
-    avatar.addEventListener("mouseleave", () => {
-      isMascotFrozen = false;
-    });
+  window.addEventListener("mouseleave", () => {
+    isTracking = false;
+    const h = getMascotHomePos();
+    xMascotTo(h.x);
+    yMascotTo(h.y);
+  });
 
-    window.addEventListener("mousemove", (e) => {
-      if (!isMascotFrozen) {
-        // Offset mascot diagonally to the bottom-right of the cursor so it behaves like a companion/pet
-        // and does not block clicks
-        xMascotTo(e.clientX + 45);
-        yMascotTo(e.clientY + 45);
-      }
-    });
-  }
+  // Touch interactions (follow touch but offset above the finger to stay visible)
+  window.addEventListener("touchstart", (e) => {
+    if (e.touches.length > 0) {
+      isTracking = true;
+      xMascotTo(e.touches[0].clientX - 70);
+      yMascotTo(e.touches[0].clientY - 70);
+    }
+  }, { passive: true });
+
+  window.addEventListener("touchmove", (e) => {
+    if (e.touches.length > 0 && isTracking) {
+      xMascotTo(e.touches[0].clientX - 70);
+      yMascotTo(e.touches[0].clientY - 70);
+    }
+  }, { passive: true });
+
+  const returnToHome = () => {
+    isTracking = false;
+    const h = getMascotHomePos();
+    xMascotTo(h.x);
+    yMascotTo(h.y);
+  };
+
+  window.addEventListener("touchend", returnToHome);
+  window.addEventListener("touchcancel", returnToHome);
+
+  // Resize handling
+  window.addEventListener("resize", () => {
+    if (!isTracking) {
+      const h = getMascotHomePos();
+      gsap.set(container, { x: h.x, y: h.y });
+    }
+  });
 
   // Click handler to cycle expressions as an easter egg
   const expressions = ["cheerful", "heart", "surprise", "sleepy"];
@@ -2404,7 +2517,7 @@ function initMascotAssistant() {
   const hoverSelector = "a, button, .btn, .cart-trigger, .menu-card, .highlight-card, .vibe-image-frame, .logo";
   
   document.addEventListener("mouseover", (e) => {
-    if (mascotReactionTimeout) return; // Do not overwrite active event reactions (e.g. cart add/remove or booking success)
+    if (mascotReactionTimeout) return; // Do not overwrite active event reactions
     const target = e.target.closest(hoverSelector);
     if (target) {
       if (target.classList.contains("menu-card") || target.classList.contains("highlight-card") || target.classList.contains("minus")) {
