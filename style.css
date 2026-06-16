@@ -373,6 +373,7 @@ body {
   pointer-events: none;
   z-index: 3;
   user-select: none;
+  overflow: hidden; /* Prevent text overflow from stretching viewport */
 }
 
 .hero-text-bg {
@@ -402,6 +403,7 @@ body {
   justify-content: center;
   z-index: 4;
   padding: 0 2rem;
+  overflow: hidden; /* Prevent side products from stretching viewport */
 }
 
 .side-product-wrapper {
@@ -3370,8 +3372,17 @@ body.has-custom-cursor .nolita-mascot-container {
   }
 
   /* Booking form container padding shrink */
-  .booking-form-wrap {
+  .booking-form-wrap,
+  .booking-cart-wrap {
     padding: 1.5rem !important;
+  }
+
+  /* Sticky Promo Banner mobile bounds fix */
+  .sticky-promo-banner {
+    left: 5% !important;
+    right: 5% !important;
+    width: auto !important;
+    transform: none !important;
   }
 }
 
