@@ -1855,7 +1855,7 @@ function setupMobileMenu() {
   const toggleMenu = () => {
     btn.classList.toggle("active");
     const isOpen = btn.classList.contains("active");
-    drawer.style.right = isOpen ? "0" : "-100%";
+    drawer.style.transform = isOpen ? "translateX(0)" : "translateX(100%)";
   };
 
   btn.addEventListener("click", toggleMenu);
@@ -1864,7 +1864,7 @@ function setupMobileMenu() {
   links.forEach(link => {
     link.addEventListener("click", () => {
       btn.classList.remove("active");
-      drawer.style.right = "-100%";
+      drawer.style.transform = "translateX(100%)";
     });
   });
 }

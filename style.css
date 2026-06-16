@@ -43,6 +43,8 @@
 html {
   scroll-behavior: smooth;
   font-size: 16px;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 body {
@@ -51,6 +53,7 @@ body {
   color: var(--clr-text-light);
   line-height: 1.6;
   overflow-x: hidden;
+  width: 100%;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -2911,7 +2914,8 @@ body.has-custom-cursor .custom-cursor-ring {
 .mobile-nav-drawer {
   position: fixed;
   top: 0;
-  right: -100%; /* Hidden offscreen by default */
+  right: 0;
+  transform: translateX(100%); /* Hidden offscreen by default */
   width: 320px;
   max-width: 85%;
   height: 100vh;
@@ -2923,7 +2927,7 @@ body.has-custom-cursor .custom-cursor-ring {
   display: flex;
   flex-direction: column;
   padding: 5rem 2.5rem;
-  transition: right 0.45s cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition: transform 0.45s cubic-bezier(0.25, 0.8, 0.25, 1);
   box-sizing: border-box;
 }
 
