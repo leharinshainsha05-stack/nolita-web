@@ -671,7 +671,10 @@ function setupPromoBanner() {
   
   if (!banner) return;
   
+  let isDismissed = false;
+  
   const checkScroll = () => {
+    if (isDismissed) return;
     // Trigger when scrolling past 400px
     if (window.scrollY > 400) {
       banner.classList.add("active");
@@ -684,7 +687,9 @@ function setupPromoBanner() {
   
   if (closeBtn) {
     closeBtn.addEventListener("click", () => {
+      isDismissed = true;
       banner.classList.remove("active");
+      window.removeEventListener("scroll", checkScroll);
     });
   }
   
@@ -695,8 +700,10 @@ function setupPromoBanner() {
       e.preventDefault();
       const target = document.getElementById("booking");
       if (target) {
+        isDismissed = true;
         target.scrollIntoView({ behavior: "smooth" });
         banner.classList.remove("active");
+        window.removeEventListener("scroll", checkScroll);
       }
     });
   }
